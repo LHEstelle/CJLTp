@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Certificat d'Authenticité</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    .certificate-page {
+      background: radial-gradient(circle at center, var(--ivory), var(--cream));
+      min-height: 257mm;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .certificate-container {
+      border: 10px double var(--gold-medium);
+      padding: var(--spacing-xxl);
+      text-align: center;
+      background: var(--white-pure);
+      max-width: 650px;
+      position: relative;
+      box-shadow: var(--shadow-strong);
+    }
+
+    .certificate-container::before,
+    .certificate-container::after {
+      content: '✦';
+      position: absolute;
+      font-size: 32px;
+      color: var(--gold-medium);
+    }
+
+    .certificate-container::before {
+      top: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .certificate-container::after {
+      bottom: -16px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .certificate-ornament-top {
+      font-size: 64px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .certificate-title {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .certificate-subtitle {
+      font-family: var(--font-decorative);
+      font-size: 18px;
+      color: var(--gold-medium);
+      font-style: italic;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .certificate-line-gold {
+      width: 200px;
+      height: 3px;
+      background: var(--gold-gradient);
+      margin: var(--spacing-lg) auto;
+    }
+
+    .certificate-main-text {
+      font-family: var(--font-decorative);
+      font-size: 18px;
+      line-height: 1.8;
+      color: var(--blue-dark);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .certificate-name {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      color: var(--gold-medium);
+      margin: var(--spacing-xl) 0;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .certificate-date {
+      font-family: var(--font-decorative);
+      font-size: 20px;
+      color: var(--blue-dark);
+      margin: var(--spacing-md) 0;
+      font-weight: 600;
+    }
+
+    .certificate-phrase {
+      font-family: var(--font-decorative);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--blue-light);
+      font-style: italic;
+      margin: var(--spacing-xl) 0;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .certificate-seal {
+      width: 120px;
+      height: 120px;
+      border: 5px solid var(--gold-medium);
+      border-radius: 50%;
+      margin: var(--spacing-xxl) auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, var(--gold-extralight), var(--cream));
+      position: relative;
+    }
+
+    .seal-inner {
+      text-align: center;
+    }
+
+    .seal-number {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      color: var(--blue-dark);
+      font-weight: 700;
+      display: block;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .seal-text {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--gold-dark);
+      line-height: 1.2;
+    }
+
+    .seal-stars-around {
+      position: absolute;
+      font-size: 16px;
+      color: var(--gold-medium);
+    }
+
+    .seal-stars-around.star-1 { top: 0; left: 50%; transform: translateX(-50%); }
+    .seal-stars-around.star-2 { right: 10px; top: 30%; }
+    .seal-stars-around.star-3 { bottom: 0; left: 50%; transform: translateX(-50%); }
+    .seal-stars-around.star-4 { left: 10px; top: 30%; }
+
+    .certificate-signature-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-top: var(--spacing-xxl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid var(--gray-medium);
+    }
+
+    .signature-item {
+      text-align: center;
+    }
+
+    .signature-line {
+      width: 150px;
+      height: 1px;
+      background: var(--blue-dark);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .signature-label {
+      font-size: 11px;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .signature-value {
+      font-family: var(--font-decorative);
+      font-size: 14px;
+      color: var(--blue-dark);
+      font-style: italic;
+    }
+
+    .certificate-footer {
+      margin-top: var(--spacing-lg);
+      font-size: 10px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page certificate-page">
+    
+    <div class="certificate-container">
+      
+      <!-- Ornement supérieur -->
+      <div class="certificate-ornament-top">✦</div>
+
+      <!-- Titre -->
+      <h1 class="certificate-title">Certificat</h1>
+      <p class="certificate-subtitle">d'Authenticité & d'Unicité</p>
+
+      <div class="certificate-line-gold"></div>
+
+      <!-- Texte principal -->
+      <p class="certificate-main-text">
+        Il est certifié par les présentes que
+      </p>
+
+      <!-- Nom en grand -->
+      <div class="certificate-name">{{PRENOM}}</div>
+
+      <!-- Date -->
+      <div class="certificate-date">
+        Né(e) le {{DATE_COMPLETE_FR}}
+      </div>
+
+      <div class="certificate-line-gold"></div>
+
+      <!-- Phrase de certification -->
+      <p class="certificate-phrase">
+        Est une personne unique, irremplaçable, dont l'arrivée dans le monde 
+        le {{DATE_COMPLETE_FR}} a changé le cours de l'Histoire. 
+        Ce voyage à travers le temps en témoigne.
+      </p>
+
+      <!-- Sceau officiel -->
+      <div class="certificate-seal">
+        <div class="seal-stars-around star-1">✦</div>
+        <div class="seal-stars-around star-2">✦</div>
+        <div class="seal-stars-around star-3">✦</div>
+        <div class="seal-stars-around star-4">✦</div>
+        
+        <div class="seal-inner">
+          <span class="seal-number">N°{{NUMERO_UNIQUE}}</span>
+          <span class="seal-text">Édition<br>Limitée</span>
+        </div>
+      </div>
+
+      <!-- Bloc signatures -->
+      <div class="certificate-signature-block">
+        <div class="signature-item">
+          <div class="signature-line"></div>
+          <div class="signature-label">Lieu</div>
+          <div class="signature-value">Ce Jour-Là</div>
+        </div>
+
+        <div class="signature-item">
+          <div class="signature-line"></div>
+          <div class="signature-label">Date</div>
+          <div class="signature-value">{{DATE_CREATION_LIVRE}}</div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <p class="certificate-footer">
+        Authentique • Unique • Irremplaçable
+      </p>
+
+    </div>
+
+  </div>
+</body>
+</html>
+
+<!-- 
+╔════════════════════════════════════════════════════════════╗
+║  NOTE TECHNIQUE                                             ║
+║  ──────────────────────────────────────────────────────    ║
+║  {{NUMERO_UNIQUE}} peut être généré dans Make :            ║
+║  - Format : YYYYMMDD-XXXX                                  ║
+║  - Exemple : 20250109-0042                                 ║
+║                                                              ║
+║  Cette page est conçue pour être ENCADRABLE.               ║
+║  Les clients vont vouloir l'afficher !                     ║
+╚════════════════════════════════════════════════════════════╝
+-->

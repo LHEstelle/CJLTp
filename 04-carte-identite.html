@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ton Profil d'Époque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    .page-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .page-title {
+      font-size: 28px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .identity-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: var(--gold-gradient);
+    }
+
+    .identity-header {
+      text-align: center;
+      padding-bottom: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+      border-bottom: 1px solid rgba(224, 192, 103, 0.3);
+    }
+
+    .identity-icon {
+      width: 100px;
+      height: 100px;
+      margin: 0 auto var(--spacing-md);
+      border: 3px solid var(--gold-light);
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42px;
+    }
+
+    .identity-name {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      color: var(--gold-light);
+      margin-bottom: var(--spacing-sm);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+
+    .identity-subtitle {
+      font-size: 13px;
+      color: var(--gold-extralight);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .traits-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: var(--spacing-md);
+      margin: var(--spacing-xl) 0;
+    }
+
+    .trait-item {
+      text-align: center;
+      padding: var(--spacing-md);
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(224, 192, 103, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .trait-item:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateY(-3px);
+    }
+
+    .trait-icon {
+      font-size: 32px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .trait-label {
+      font-size: 11px;
+      color: var(--gold-extralight);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .trait-value {
+      font-family: var(--font-decorative);
+      font-size: 18px;
+      color: var(--white-soft);
+      font-weight: 600;
+    }
+
+    .identity-info {
+      margin-top: var(--spacing-xl);
+      padding-top: var(--spacing-lg);
+      border-top: 1px solid rgba(224, 192, 103, 0.3);
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      padding: var(--spacing-sm) 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .info-row:last-child {
+      border-bottom: none;
+    }
+
+    .info-label {
+      color: var(--gold-extralight);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .info-value {
+      color: var(--white-soft);
+      font-weight: 600;
+      font-size: 14px;
+      text-align: right;
+      max-width: 60%;
+    }
+
+    .identity-stamp {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 70px;
+      height: 70px;
+      border: 2px solid var(--gold-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-12deg);
+      opacity: 0.6;
+      background: rgba(224, 192, 103, 0.1);
+    }
+
+    .stamp-text {
+      font-size: 9px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      text-align: center;
+      line-height: 1.2;
+      color: var(--gold-light);
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    
+    <!-- En-tête de page -->
+    <div class="page-header">
+      <h2 class="page-title text-uppercase">Ton Profil d'Époque</h2>
+      <div class="ornament-line"></div>
+    </div>
+
+    <!-- Carte d'identité -->
+    <div class="identity-card">
+      
+      <!-- En-tête carte -->
+      <div class="identity-header">
+        <div class="identity-icon">⭐</div>
+        <div class="identity-name">{{PRENOM}}</div>
+        <div class="identity-subtitle">Arrivé(e) le {{DATE_COMPLETE_FR}}</div>
+      </div>
+
+      <!-- Grille des 3 traits principaux -->
+      <div class="traits-grid">
+        <div class="trait-item">
+          <div class="trait-icon">🦁</div>
+          <div class="trait-label">Caractère</div>
+          <div class="trait-value">{{TRAIT_1}}</div>
+        </div>
+        <div class="trait-item">
+          <div class="trait-icon">✨</div>
+          <div class="trait-label">Essence</div>
+          <div class="trait-value">{{TRAIT_2}}</div>
+        </div>
+        <div class="trait-item">
+          <div class="trait-icon">🎯</div>
+          <div class="trait-label">Talent</div>
+          <div class="trait-value">{{TRAIT_3}}</div>
+        </div>
+      </div>
+
+      <!-- Informations complémentaires -->
+      <div class="identity-info">
+        <div class="info-row">
+          <span class="info-label">Rôle dans la fiction</span>
+          <span class="info-value">{{ROLE_FICTION}}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Superpouvoir</span>
+          <span class="info-value">{{SUPERPOWER}}</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">Devise</span>
+          <span class="info-value">{{DEVISE}}</span>
+        </div>
+      </div>
+
+      <!-- Tampon authentique -->
+      <div class="identity-stamp">
+        <div class="stamp-text">Certifié<br>Unique</div>
+      </div>
+
+    </div>
+
+    <!-- Note contextuelle -->
+    <div class="highlight-box mt-lg">
+      <p class="text-center" style="margin: 0;">
+        <strong>Ce profil te suivra dans la suite de ton voyage...</strong><br>
+        Il te permettra de comprendre comment tu aurais vécu l'Histoire.
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>

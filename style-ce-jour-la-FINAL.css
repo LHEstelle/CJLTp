@@ -1,0 +1,588 @@
+/* ============================================
+   CE JOUR-LÀ - SYSTÈME DE STYLE FINAL
+   Palette premium : Bleu foncé + Or gradient
+   ============================================ */
+
+:root {
+  /* Palette principale (fournie par le client) */
+  --blue-premium: #0b1a2b;
+  --gold-a: #6f5820;
+  --gold-b: #9e7b23;
+  --gold-c: #e0c067;
+  --gold-d: #7a6223;
+  --gold-gradient: linear-gradient(103deg, 
+    var(--gold-d), 
+    var(--gold-a) 16%, 
+    var(--gold-b) 36%, 
+    var(--gold-c) 58%, 
+    var(--gold-b) 78%, 
+    var(--gold-a) 92%, 
+    var(--gold-d)
+  );
+  
+  /* Extensions pour contraste optimal */
+  --blue-dark: #0b1a2b;
+  --blue-medium: #1a2d42;
+  --blue-light: #2a3d52;
+  
+  --gold-dark: #6f5820;
+  --gold-medium: #9e7b23;
+  --gold-light: #e0c067;
+  --gold-extralight: #f5e6c8;
+  
+  /* Neutres */
+  --white-pure: #ffffff;
+  --white-soft: #fafaf8;
+  --cream: #f5f0e8;
+  --ivory: #fffef7;
+  --gray-light: #e8e8e8;
+  --gray-medium: #cccccc;
+  
+  /* Typographie */
+  --font-heading: 'Playfair Display', serif;
+  --font-body: 'Montserrat', sans-serif;
+  --font-decorative: 'Cormorant Garamond', serif;
+  
+  /* Espacements */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 32px;
+  --spacing-xl: 48px;
+  --spacing-xxl: 64px;
+  
+  /* Ombres */
+  --shadow-soft: 0 2px 8px rgba(11, 26, 43, 0.08);
+  --shadow-medium: 0 4px 16px rgba(11, 26, 43, 0.12);
+  --shadow-strong: 0 8px 24px rgba(11, 26, 43, 0.16);
+  --shadow-gold: 0 4px 12px rgba(158, 123, 35, 0.15);
+}
+
+/* ============================================
+   RESET & BASE
+   ============================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--blue-dark);
+  background: var(--cream);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Format page A4 pour impression */
+.page {
+  width: 210mm;
+  min-height: 297mm;
+  padding: 20mm;
+  background: var(--white-pure);
+  margin: 0 auto 20px;
+  position: relative;
+  page-break-after: always;
+  overflow: hidden;
+  box-shadow: var(--shadow-medium);
+}
+
+@media print {
+  .page {
+    margin: 0;
+    box-shadow: none;
+  }
+  body {
+    background: white;
+  }
+}
+
+/* ============================================
+   TYPOGRAPHIE
+   ============================================ */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: var(--blue-dark);
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 42px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 32px;
+  letter-spacing: 1.5px;
+}
+
+h3 {
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+h4 {
+  font-size: 18px;
+  letter-spacing: 0.5px;
+}
+
+p {
+  font-size: 14px;
+  line-height: 1.8;
+  margin-bottom: var(--spacing-sm);
+}
+
+.text-large {
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+.text-small {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--gold-light);
+}
+
+.text-blue {
+  color: var(--blue-dark);
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Gestion longueur texte (sécurité overflow) */
+.text-container {
+  overflow: hidden;
+}
+
+.text-responsive {
+  font-size: clamp(13px, 1vw, 16px);
+  line-height: 1.7;
+}
+
+.text-truncate {
+  display: -webkit-box;
+  -webkit-line-clamp: 15;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ============================================
+   ORNEMENTS ART DÉCO
+   ============================================ */
+
+.ornament-line {
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--gold-light) 20%,
+    var(--gold-light) 80%,
+    transparent
+  );
+  margin: var(--spacing-md) 0;
+}
+
+.ornament-corner {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--gold-light);
+  z-index: 10;
+}
+
+.ornament-corner.top-left {
+  top: 15mm;
+  left: 15mm;
+  border-right: none;
+  border-bottom: none;
+}
+
+.ornament-corner.top-right {
+  top: 15mm;
+  right: 15mm;
+  border-left: none;
+  border-bottom: none;
+}
+
+.ornament-corner.bottom-left {
+  bottom: 15mm;
+  left: 15mm;
+  border-right: none;
+  border-top: none;
+}
+
+.ornament-corner.bottom-right {
+  bottom: 15mm;
+  right: 15mm;
+  border-left: none;
+  border-top: none;
+}
+
+/* Motif décoratif étoiles */
+.stars-pattern {
+  font-size: 12px;
+  color: var(--gold-light);
+  letter-spacing: 8px;
+  opacity: 0.6;
+}
+
+/* ============================================
+   CADRES & CONTENEURS
+   ============================================ */
+
+.frame-gold {
+  border: 2px solid var(--gold-light);
+  padding: var(--spacing-md);
+  position: relative;
+  background: var(--white-pure);
+}
+
+.frame-gold::before,
+.frame-gold::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border: 2px solid var(--gold-light);
+  background: var(--white-pure);
+  transform: rotate(45deg);
+}
+
+.frame-gold::before {
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.frame-gold::after {
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+}
+
+.content-block {
+  margin-bottom: var(--spacing-lg);
+}
+
+.content-block-title {
+  font-family: var(--font-decorative);
+  font-size: 18px;
+  color: var(--gold-medium);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: var(--spacing-sm);
+  border-bottom: 1px solid var(--gold-light);
+  padding-bottom: var(--spacing-xs);
+}
+
+/* ============================================
+   BADGES & LABELS
+   ============================================ */
+
+.badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-md);
+  background: var(--gold-light);
+  color: var(--blue-dark);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  clip-path: polygon(5% 0%, 95% 0%, 100% 50%, 95% 100%, 5% 100%, 0% 50%);
+}
+
+.stamp {
+  display: inline-block;
+  border: 2px solid var(--gold-medium);
+  border-radius: 50%;
+  padding: var(--spacing-sm);
+  text-align: center;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--gold-medium);
+  line-height: 1.2;
+}
+
+/* ============================================
+   GRILLES & LAYOUTS
+   ============================================ */
+
+.two-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-md);
+}
+
+.three-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-sm);
+}
+
+.grid-auto {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--spacing-md);
+}
+
+/* ============================================
+   ENCADRÉS SPÉCIAUX
+   ============================================ */
+
+.highlight-box {
+  background: var(--gold-extralight);
+  padding: var(--spacing-md);
+  border-left: 4px solid var(--gold-medium);
+  margin: var(--spacing-md) 0;
+  font-style: italic;
+}
+
+.quote-box {
+  background: var(--blue-dark);
+  color: var(--white-soft);
+  padding: var(--spacing-xl);
+  text-align: center;
+  position: relative;
+  margin: var(--spacing-lg) 0;
+}
+
+.quote-box::before {
+  content: '"';
+  font-family: var(--font-decorative);
+  font-size: 100px;
+  position: absolute;
+  top: -20px;
+  left: 20px;
+  color: var(--gold-light);
+  opacity: 0.2;
+  line-height: 1;
+}
+
+.info-box {
+  background: var(--cream);
+  border: 1px solid var(--gold-light);
+  padding: var(--spacing-md);
+  border-radius: 4px;
+}
+
+.warning-box {
+  background: #fff9e6;
+  border-left: 4px solid #f5c467;
+  padding: var(--spacing-sm);
+  margin: var(--spacing-sm) 0;
+  display: flex;
+  gap: var(--spacing-sm);
+  align-items: start;
+}
+
+/* ============================================
+   LISTES STYLISÉES
+   ============================================ */
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  position: relative;
+  padding-left: 30px;
+  margin-bottom: var(--spacing-sm);
+}
+
+.custom-list li::before {
+  content: '◆';
+  position: absolute;
+  left: 0;
+  color: var(--gold-light);
+  font-size: 16px;
+}
+
+/* ============================================
+   ESPACEMENTS UTILITAIRES
+   ============================================ */
+
+.mt-xs { margin-top: var(--spacing-xs); }
+.mt-sm { margin-top: var(--spacing-sm); }
+.mt-md { margin-top: var(--spacing-md); }
+.mt-lg { margin-top: var(--spacing-lg); }
+.mt-xl { margin-top: var(--spacing-xl); }
+
+.mb-xs { margin-bottom: var(--spacing-xs); }
+.mb-sm { margin-bottom: var(--spacing-sm); }
+.mb-md { margin-bottom: var(--spacing-md); }
+.mb-lg { margin-bottom: var(--spacing-lg); }
+.mb-xl { margin-bottom: var(--spacing-xl); }
+
+.pt-xs { padding-top: var(--spacing-xs); }
+.pt-sm { padding-top: var(--spacing-sm); }
+.pt-md { padding-top: var(--spacing-md); }
+.pt-lg { padding-top: var(--spacing-lg); }
+
+.pb-xs { padding-bottom: var(--spacing-xs); }
+.pb-sm { padding-bottom: var(--spacing-sm); }
+.pb-md { padding-bottom: var(--spacing-md); }
+.pb-lg { padding-bottom: var(--spacing-lg); }
+
+/* ============================================
+   ANIMATIONS SUBTILES
+   ============================================ */
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(0.95); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out;
+}
+
+.animate-twinkle {
+  animation: twinkle 2s ease-in-out infinite;
+}
+
+/* ============================================
+   RESPONSIVE (Si PDF consulté sur écran)
+   ============================================ */
+
+@media screen and (max-width: 768px) {
+  .page {
+    width: 100%;
+    min-height: auto;
+    padding: 15mm;
+  }
+  
+  h1 { font-size: 32px; }
+  h2 { font-size: 24px; }
+  h3 { font-size: 18px; }
+  
+  .two-columns,
+  .three-columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   CLASSES SPÉCIFIQUES PAR PAGE
+   ============================================ */
+
+/* Page intro */
+.intro-hero {
+  min-height: 200mm;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Affiche vintage */
+.affiche-container {
+  background: linear-gradient(to bottom, var(--cream), var(--white-pure));
+  border: 3px solid var(--blue-dark);
+  padding: var(--spacing-xl);
+}
+
+/* Carte identité */
+.identity-card {
+  background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-medium) 100%);
+  color: var(--white-soft);
+  padding: var(--spacing-xl);
+  position: relative;
+}
+
+/* Fiction narrative */
+.narrative-block {
+  font-family: var(--font-decorative);
+  font-size: 15px;
+  line-height: 1.9;
+  text-align: justify;
+}
+
+.narrative-block p:first-letter {
+  font-size: 48px;
+  font-family: var(--font-heading);
+  color: var(--gold-light);
+  float: left;
+  line-height: 40px;
+  padding-right: 8px;
+  margin-top: 3px;
+}
+
+/* Stats infographie */
+.stat-card {
+  background: var(--white-pure);
+  border: 1px solid var(--gold-light);
+  padding: var(--spacing-md);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-gold);
+}
+
+.stat-number {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold-medium);
+  display: block;
+  margin-bottom: var(--spacing-xs);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--blue-light);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Certificat */
+.certificate-container {
+  border: 8px double var(--gold-light);
+  padding: var(--spacing-xxl);
+  text-align: center;
+  background: radial-gradient(circle at center, var(--ivory), var(--cream));
+  position: relative;
+}
+
+.certificate-seal {
+  width: 100px;
+  height: 100px;
+  border: 4px solid var(--gold-medium);
+  border-radius: 50%;
+  margin: var(--spacing-lg) auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle, var(--gold-extralight), transparent);
+  position: relative;
+}
+
+/* ============================================
+   FIN DU CSS
+   ============================================ */

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Histoires du {{DATE_COMPLETE_FR}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    /* Page journal */
+    .journal-page {
+      background: var(--cream);
+      padding: var(--spacing-md);
+    }
+
+    /* En-tête journal */
+    .journal-header {
+      text-align: center;
+      border-bottom: 4px double var(--blue-dark);
+      padding-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .journal-masthead {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .journal-date {
+      font-size: 14px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    /* Titre principal */
+    .journal-hero {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+      padding: var(--spacing-md) 0;
+      border-bottom: 2px solid var(--gold-light);
+    }
+
+    .journal-headline {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .journal-subhead {
+      font-size: 13px;
+      color: var(--gold-medium);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* Article narratif */
+    .article-narratif {
+      background: var(--white-pure);
+      padding: var(--spacing-xl);
+      border: 2px solid var(--gold-light);
+      box-shadow: 0 2px 8px rgba(11, 26, 43, 0.08);
+    }
+
+    .article-paragraph {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-dark);
+      text-align: justify;
+      margin-bottom: var(--spacing-lg);
+      column-count: 2;
+      column-gap: var(--spacing-xl);
+    }
+
+    /* Lettrine (première lettre) */
+    .article-lettrine {
+      font-family: var(--font-heading);
+      font-size: 64px;
+      line-height: 0.8;
+      float: left;
+      color: var(--gold-dark);
+      margin: 8px 12px 0 0;
+      font-weight: 700;
+    }
+
+    /* Footer journal */
+    .journal-footer {
+      text-align: center;
+      margin-top: var(--spacing-lg);
+      padding-top: var(--spacing-md);
+      border-top: 2px solid var(--blue-dark);
+      font-size: 11px;
+      color: var(--gold-medium);
+      font-style: italic;
+    }
+
+    /* Responsive colonnes */
+    @media (max-width: 600px) {
+      .feature-body {
+        column-count: 1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page journal-page">
+    
+    <!-- En-tête journal -->
+    <div class="journal-header">
+      <div class="journal-masthead">Les Chroniques</div>
+      <div class="journal-date">{{DATE_COMPLETE_FR}}</div>
+    </div>
+
+    <!-- Titre principal -->
+    <div class="journal-hero">
+      <h1 class="journal-headline">Ce Jour dans l'Histoire</h1>
+      <p class="journal-subhead">{{EVENEMENT_TITRE}}</p>
+    </div>
+
+    <!-- ARTICLE NARRATIF COMPLET -->
+    <div class="article-narratif">
+      
+      <!-- Paragraphe 1 : Événement principal + contexte météo -->
+      <p class="article-paragraph">
+        <span class="article-lettrine">{{PREMIERE_LETTRE}}</span>{{TEXTE_NARRATIF_COMPLET}}
+      </p>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="journal-footer">
+      <p>Voilà l'histoire complète de ce jour.<br>Chaque date porte en elle des vies, des événements, des destins.</p>
+    </div>
+
+  </div>
+</body>
+</html>
+
+<!-- 
+╔════════════════════════════════════════════════════════════╗
+║  VARIABLES NÉCESSAIRES                                      ║
+║  ──────────────────────────────────────────────────────    ║
+║  {{DATE_COMPLETE_FR}}           - Ex: "22 mai 2005"        ║
+║  {{ANNEE_NAISSANCE}}            - Ex: 2005                 ║
+║                                                              ║
+║  ÉVÉNEMENT HISTORIQUE (2) :                                 ║
+║  {{EVENEMENT_TITRE}}            - Ex: "Chute du Mur"       ║
+║  {{EVENEMENT_DESCRIPTION}}      - 80-100 mots              ║
+║                                                              ║
+║  NAISSANCES (3×3 = 9) :                                     ║
+║  {{NAISSANCE_1_NOM}}            - Ex: "Didier Drogba"      ║
+║  {{NAISSANCE_1_ANNEE}}          - Ex: 1978                 ║
+║  {{NAISSANCE_1_EXPLICATION}}    - Texte généré par Claude  ║
+║  (× 3 personnes)                                            ║
+║                                                              ║
+║  DÉCÈS (3×3 = 9) :                                          ║
+║  {{DECES_1_NOM}}                - Ex: "George Best"        ║
+║  {{DECES_1_ANNEE}}              - Ex: 2005                 ║
+║  {{DECES_1_EXPLICATION}}        - Texte généré par Claude  ║
+║  (× 3 personnes)                                            ║
+║                                                              ║
+║  CULTURE (5) :                                              ║
+║  {{FILM_CULTE}}                 - Ex: "Harry Potter"       ║
+║  {{FILM_CULTE_EXPLICATION}}     - Texte généré par Claude  ║
+║  {{CHANSON_TOP}}                - Ex: "Crazy - Gnarls..."  ║
+║  {{CHANSON_TOP_EXPLICATION}}    - Texte généré par Claude  ║
+║  {{FILM_JOUR_EXPLICATION}}      - Texte généré par Claude  ║
+║                                                              ║
+║  CONTEXTE (1) :                                             ║
+║  {{CONTEXTE_GENERAL}}           - 80-100 mots              ║
+║                                                              ║
+║  MÉTÉO (1) :                                                ║
+║  {{METEO_DESCRIPTION}}          - Ex: "Temps ensoleillé"   ║
+║                                                              ║
+║  FUN FACT (1) :                                             ║
+║  {{FUN_FACT}}                   - 20-30 mots               ║
+║                                                              ║
+║  TOTAL : 29 VARIABLES                                       ║
+╚════════════════════════════════════════════════════════════╝
+-->

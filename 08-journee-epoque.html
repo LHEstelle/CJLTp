@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Une Journée en {{ANNEE}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    .journee-container {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .journee-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .journee-title {
+      font-family: var(--font-decorative);
+      font-size: 36px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-md);
+      font-style: italic;
+    }
+
+    .journee-subtitle {
+      font-size: 14px;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .journee-block {
+      margin-bottom: var(--spacing-xl);
+      padding: var(--spacing-lg);
+      background: var(--cream);
+      border-left: 4px solid var(--gold-light);
+      position: relative;
+    }
+
+    .journee-block::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      background: var(--gold-medium);
+      border-radius: 50%;
+      border: 3px solid var(--white-pure);
+    }
+
+    .journee-time {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .journee-text {
+      font-family: var(--font-decorative);
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--blue-dark);
+    }
+
+    .journee-text strong {
+      color: var(--gold-dark);
+    }
+
+    .journee-sensory {
+      background: var(--white-pure);
+      padding: var(--spacing-md);
+      margin-top: var(--spacing-md);
+      border: 1px dashed var(--gold-light);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--blue-light);
+    }
+
+    .journee-footer {
+      margin-top: var(--spacing-xxl);
+      padding: var(--spacing-lg);
+      background: var(--gold-extralight);
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .journee-footer-text {
+      font-family: var(--font-decorative);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--blue-dark);
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="journee-container">
+      
+      <!-- En-tête -->
+      <div class="journee-header">
+        <h2 class="journee-title">Une Journée en {{ANNEE_NAISSANCE}}</h2>
+        <div class="ornament-line"></div>
+        <p class="journee-subtitle">
+          Si tu avais vécu ton premier jour comme une vraie journée
+        </p>
+      </div>
+
+      <!-- Matin -->
+      <div class="journee-block">
+        <div class="journee-time">🌅 Matin</div>
+        <div class="journee-text">
+          {{JOURNEE_MATIN}}
+        </div>
+        <div class="journee-sensory">
+          {{JOURNEE_MATIN_SENSORY}}
+        </div>
+      </div>
+
+      <!-- Midi -->
+      <div class="journee-block">
+        <div class="journee-time">☀️ Midi</div>
+        <div class="journee-text">
+          {{JOURNEE_MIDI}}
+        </div>
+        <div class="journee-sensory">
+          {{JOURNEE_MIDI_SENSORY}}
+        </div>
+      </div>
+
+      <!-- Après-midi -->
+      <div class="journee-block">
+        <div class="journee-time">🌤️ Après-midi</div>
+        <div class="journee-text">
+          {{JOURNEE_APRES_MIDI}}
+        </div>
+        <div class="journee-sensory">
+          {{JOURNEE_APRES_MIDI_SENSORY}}
+        </div>
+      </div>
+
+      <!-- Soir -->
+      <div class="journee-block">
+        <div class="journee-time">🌙 Soir</div>
+        <div class="journee-text">
+          {{JOURNEE_SOIR}}
+        </div>
+        <div class="journee-sensory">
+          {{JOURNEE_SOIR_SENSORY}}
+        </div>
+      </div>
+
+      <!-- Conclusion -->
+      <div class="journee-footer">
+        <p class="journee-footer-text">
+          Voilà à quoi ressemblait une journée ordinaire dans le monde 
+          où tu es arrivé(e). Simple, mais remplie d'une magie que 
+          nous avons oubliée.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- 
+╔════════════════════════════════════════════════════════════╗
+║  NOTE ÉDITORIALE                                            ║
+║  ──────────────────────────────────────────────────────    ║
+║  Chaque bloc (matin/midi/après-midi/soir) :                ║
+║  - Texte principal : 40-60 mots                            ║
+║  - Sensory note : 15-25 mots (sons, odeurs, sensations)   ║
+║                                                              ║
+║  Ton : Immersif, nostalgique, détails sensoriels.          ║
+║  Style : "Je me réveille sur... Dans la cuisine, il y a..." ║
+╚════════════════════════════════════════════════════════════╝
+-->

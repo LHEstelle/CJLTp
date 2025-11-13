@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Miroir</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    .mirror-container {
+      min-height: 257mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+
+    .mirror-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(circle at center, var(--gold-extralight), var(--cream));
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    .mirror-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      padding: var(--spacing-xxl);
+    }
+
+    .mirror-icon {
+      font-size: 64px;
+      margin-bottom: var(--spacing-xl);
+      animation: twinkle 3s ease-in-out infinite;
+    }
+
+    .mirror-title {
+      font-family: var(--font-decorative);
+      font-size: 28px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-xl);
+      font-style: italic;
+    }
+
+    .mirror-text {
+      font-size: 17px;
+      line-height: 1.9;
+      color: var(--blue-dark);
+      font-family: var(--font-decorative);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .mirror-frame {
+      border: 3px solid var(--gold-light);
+      padding: var(--spacing-xl);
+      position: relative;
+      background: rgba(255, 255, 255, 0.8);
+      backdrop-filter: blur(5px);
+    }
+
+    .mirror-frame::before,
+    .mirror-frame::after {
+      content: '✦';
+      position: absolute;
+      font-size: 24px;
+      color: var(--gold-light);
+    }
+
+    .mirror-frame::before {
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mirror-frame::after {
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .mirror-signature {
+      margin-top: var(--spacing-xl);
+      font-size: 13px;
+      color: var(--gold-medium);
+      font-style: italic;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="mirror-container">
+      
+      <!-- Background décoratif -->
+      <div class="mirror-background"></div>
+
+      <!-- Contenu central -->
+      <div class="mirror-content">
+        
+        <div class="mirror-icon">🪞</div>
+        
+        <h2 class="mirror-title">Le Miroir</h2>
+
+        <div class="mirror-frame">
+          <div class="mirror-text">
+            {{MIROIR_TEXT}}
+          </div>
+        </div>
+
+        <div class="mirror-signature">
+          Ce que cette fiction révèle de toi
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- 
+╔════════════════════════════════════════════════════════════╗
+║  NOTE ÉDITORIALE                                            ║
+║  ──────────────────────────────────────────────────────    ║
+║  Le texte miroir doit faire 50-70 mots MAX (2-3 phrases).  ║
+║  C'est un moment de transition, pas un développement.      ║
+║                                                              ║
+║  Ton : Chaleureux, encourageant, concret.                  ║
+║  Structure : "Cette version de toi... [lien vie réelle]"   ║
+╚════════════════════════════════════════════════════════════╝
+-->

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ton Monde d'Époque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    .capsule-container {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .capsule-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .capsule-title {
+      font-size: 32px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .capsule-year {
+      font-family: var(--font-decorative);
+      font-size: 48px;
+      color: var(--gold-medium);
+      font-weight: 700;
+      margin: var(--spacing-md) 0;
+    }
+
+    .capsule-subtitle {
+      font-size: 14px;
+      color: var(--blue-light);
+      font-style: italic;
+    }
+
+    .capsule-image {
+      width: 100%;
+      height: 350px;
+      background: linear-gradient(135deg, var(--cream), var(--gold-extralight));
+      border: 3px solid var(--gold-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: var(--spacing-xl) 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .capsule-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .capsule-image-placeholder {
+      font-size: 14px;
+      color: var(--gold-medium);
+      text-align: center;
+      padding: var(--spacing-lg);
+    }
+
+    .capsule-legend {
+      text-align: center;
+      font-size: 12px;
+      color: var(--blue-light);
+      font-style: italic;
+      margin-top: var(--spacing-sm);
+    }
+
+    .capsule-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-md);
+      margin-top: var(--spacing-xl);
+    }
+
+    .capsule-item {
+      background: var(--white-pure);
+      border: 1px solid var(--gold-light);
+      padding: var(--spacing-md);
+      text-align: center;
+    }
+
+    .capsule-item-icon {
+      font-size: 36px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .capsule-item-label {
+      font-size: 11px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .capsule-item-value {
+      font-family: var(--font-decorative);
+      font-size: 16px;
+      color: var(--blue-dark);
+      font-weight: 600;
+    }
+
+    .nostalgia-note {
+      background: var(--gold-extralight);
+      padding: var(--spacing-lg);
+      margin-top: var(--spacing-xl);
+      text-align: center;
+      border-left: 4px solid var(--gold-medium);
+    }
+
+    .nostalgia-note-text {
+      font-family: var(--font-decorative);
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--blue-dark);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="capsule-container">
+      
+      <!-- En-tête -->
+      <div class="capsule-header">
+        <h2 class="capsule-title">Ton Monde d'Époque</h2>
+        <div class="ornament-line"></div>
+        <div class="capsule-year">{{ANNEE_NAISSANCE}}</div>
+        <p class="capsule-subtitle">
+          Ce à quoi ressemblait le monde quand tu es arrivé(e)
+        </p>
+      </div>
+
+      <!-- Image principale (générée par IA) -->
+      <div class="capsule-image">
+        <!-- Image IA insérée ici -->
+        {{CAPSULE_IMAGE_URL}}
+        <!-- Placeholder si pas d'image -->
+        <div class="capsule-image-placeholder">
+          Image générée : Objets, pubs, packaging, ambiances de {{ANNEE_NAISSANCE}}
+        </div>
+      </div>
+      <p class="capsule-legend">
+        Une plongée visuelle dans l'univers de {{ANNEE_NAISSANCE}}
+      </p>
+
+      <!-- Grille d'éléments culturels -->
+      <div class="capsule-grid">
+        <div class="capsule-item">
+          <div class="capsule-item-icon">🎵</div>
+          <div class="capsule-item-label">Musique du moment</div>
+          <div class="capsule-item-value">{{CHANSON_TOP}}</div>
+        </div>
+
+        <div class="capsule-item">
+          <div class="capsule-item-icon">📺</div>
+          <div class="capsule-item-label">Série phare</div>
+          <div class="capsule-item-value">{{SERIE_POPULAIRE}}</div>
+        </div>
+
+        <div class="capsule-item">
+          <div class="capsule-item-icon">🎮</div>
+          <div class="capsule-item-label">Jeu culte</div>
+          <div class="capsule-item-value">{{JEU_CULTE}}</div>
+        </div>
+
+        <div class="capsule-item">
+          <div class="capsule-item-icon">👕</div>
+          <div class="capsule-item-label">Mode de l'époque</div>
+          <div class="capsule-item-value">{{MODE_TENDANCE}}</div>
+        </div>
+      </div>
+
+      <!-- Note nostalgique -->
+      <div class="nostalgia-note">
+        <p class="nostalgia-note-text">
+          Voilà l'univers dans lequel tu as grandi. Ces objets, ces sons, 
+          ces images... Ils ont façonné ton enfance et font partie de toi, 
+          même si tu ne t'en souviens pas consciemment.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- 
+╔════════════════════════════════════════════════════════════╗
+║  NOTE GÉNÉRATION IMAGE IA                                   ║
+║  ──────────────────────────────────────────────────────    ║
+║  Prompt Midjourney/DALL-E suggéré :                        ║
+║                                                              ║
+║  "Vintage collage of iconic objects from [ANNÉE],          ║
+║  including [OBJETS SPÉCIFIQUES], retro advertising,        ║
+║  product packaging, technology, fashion, warm nostalgic    ║
+║  lighting, editorial photography style --ar 16:9"          ║
+║                                                              ║
+║  Si pas d'image IA : Le placeholder texte est élégant.     ║
+╚════════════════════════════════════════════════════════════╝
+-->

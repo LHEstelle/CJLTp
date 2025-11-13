@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Connais-tu bien {{PRENOM}} ?</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    .quiz-container {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .quiz-title {
+      font-size: 32px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .quiz-subtitle {
+      font-size: 14px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .quiz-intro {
+      text-align: center;
+      font-size: 15px;
+      color: var(--blue-light);
+      margin-bottom: var(--spacing-xl);
+      font-style: italic;
+    }
+
+    .question-block {
+      margin-bottom: var(--spacing-xxl);
+      padding: var(--spacing-lg);
+      background: var(--cream);
+      border-left: 4px solid var(--gold-light);
+      position: relative;
+    }
+
+    .question-number {
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: var(--gold-medium);
+      color: var(--white-pure);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .question-text {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-md);
+      padding-left: var(--spacing-md);
+    }
+
+    .answers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+    }
+
+    .answer-option {
+      padding: var(--spacing-md);
+      background: var(--white-pure);
+      border: 2px solid var(--gray-light);
+      text-align: center;
+      font-size: 14px;
+      color: var(--blue-dark);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .answer-option.correct {
+      border-color: var(--gold-medium);
+      background: var(--gold-extralight);
+    }
+
+    .answer-option.correct::after {
+      content: '✓';
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      color: var(--gold-dark);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .answer-label {
+      font-weight: 600;
+      color: var(--gold-dark);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--spacing-xs);
+      display: block;
+    }
+
+    .quiz-score {
+      margin-top: var(--spacing-xxl);
+      padding: var(--spacing-xl);
+      background: var(--blue-dark);
+      color: var(--white-soft);
+      text-align: center;
+    }
+
+    .score-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--gold-light);
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .score-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--white-soft);
+    }
+
+    .quiz-footer {
+      margin-top: var(--spacing-xl);
+      text-align: center;
+      font-size: 13px;
+      color: var(--blue-light);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="quiz-container">
+      
+      <!-- En-tête -->
+      <div class="quiz-header">
+        <h2 class="quiz-title">Le Grand Quizz</h2>
+        <div class="ornament-line"></div>
+        <p class="quiz-subtitle">Connais-tu bien {{PRENOM}} ?</p>
+      </div>
+
+      <p class="quiz-intro">
+        5 questions pour tester tes connaissances.<br>
+        Les bonnes réponses sont indiquées. Compte tes points !
+      </p>
+
+      <!-- Question 1 -->
+      <div class="question-block">
+        <div class="question-number">1</div>
+        <div class="question-text">{{QUESTION_1}}</div>
+        <div class="answers-grid">
+          <div class="answer-option">
+            <span class="answer-label">A</span>
+            {{REPONSE_1A}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">B</span>
+            {{REPONSE_1B}}
+          </div>
+          <div class="answer-option correct">
+            <span class="answer-label">C</span>
+            {{REPONSE_1C}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">D</span>
+            {{REPONSE_1D}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="question-block">
+        <div class="question-number">2</div>
+        <div class="question-text">{{QUESTION_2}}</div>
+        <div class="answers-grid">
+          <div class="answer-option">
+            <span class="answer-label">A</span>
+            {{REPONSE_2A}}
+          </div>
+          <div class="answer-option correct">
+            <span class="answer-label">B</span>
+            {{REPONSE_2B}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">C</span>
+            {{REPONSE_2C}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">D</span>
+            {{REPONSE_2D}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="question-block">
+        <div class="question-number">3</div>
+        <div class="question-text">{{QUESTION_3}}</div>
+        <div class="answers-grid">
+          <div class="answer-option correct">
+            <span class="answer-label">A</span>
+            {{REPONSE_3A}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">B</span>
+            {{REPONSE_3B}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">C</span>
+            {{REPONSE_3C}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">D</span>
+            {{REPONSE_3D}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 4 -->
+      <div class="question-block">
+        <div class="question-number">4</div>
+        <div class="question-text">{{QUESTION_4}}</div>
+        <div class="answers-grid">
+          <div class="answer-option">
+            <span class="answer-label">A</span>
+            {{REPONSE_4A}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">B</span>
+            {{REPONSE_4B}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">C</span>
+            {{REPONSE_4C}}
+          </div>
+          <div class="answer-option correct">
+            <span class="answer-label">D</span>
+            {{REPONSE_4D}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 5 -->
+      <div class="question-block">
+        <div class="question-number">5</div>
+        <div class="question-text">{{QUESTION_5}}</div>
+        <div class="answers-grid">
+          <div class="answer-option">
+            <span class="answer-label">A</span>
+            {{REPONSE_5A}}
+          </div>
+          <div class="answer-option correct">
+            <span class="answer-label">B</span>
+            {{REPONSE_5B}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">C</span>
+            {{REPONSE_5C}}
+          </div>
+          <div class="answer-option">
+            <span class="answer-label">D</span>
+            {{REPONSE_5D}}
+          </div>
+        </div>
+      </div>
+
+      <!-- Score -->
+      <div class="quiz-score">
+        <div class="score-title">Interprétation des résultats</div>
+        <div class="score-text">
+          <p><strong>5/5</strong> — Tu connais {{PRENOM}} mieux que personne ! Bravo 🎉</p>
+          <p><strong>3-4/5</strong> — Très bien ! Quelques détails t'ont échappé.</p>
+          <p><strong>1-2/5</strong> — Il est temps de passer plus de temps ensemble !</p>
+          <p><strong>0/5</strong> — Euh... Tu es sûr(e) de connaître cette personne ? 😅</p>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <p class="quiz-footer">
+        Les bonnes réponses sont marquées d'une coche ✓
+      </p>
+
+    </div>
+  </div>
+</body>
+</html>
+
+<!-- 
+╔════════════════════════════════════════════════════════════╗
+║  NOTE TECHNIQUE                                             ║
+║  ──────────────────────────────────────────────────────    ║
+║  Les bonnes réponses sont ALTERNÉES dans le code HTML :    ║
+║  Question 1 → C                                             ║
+║  Question 2 → B                                             ║
+║  Question 3 → A                                             ║
+║  Question 4 → D                                             ║
+║  Question 5 → B                                             ║
+║                                                              ║
+║  Ça évite qu'on puisse deviner le pattern.                 ║
+╚════════════════════════════════════════════════════════════╝
+-->

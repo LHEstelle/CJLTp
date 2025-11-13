@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel d'Utilisation - {{PRENOM}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    /* Style manuel Art Déco */
+    .manual-page {
+      background: var(--cream);
+      padding: var(--spacing-lg);
+      position: relative;
+    }
+
+    /* Lignes de séparation */
+    .separator {
+      color: var(--gold-medium);
+      font-size: 16px;
+      letter-spacing: 4px;
+      line-height: 1;
+      margin: var(--spacing-md) 0;
+      text-align: center;
+    }
+
+    /* En-tête manuel */
+    .manual-header {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+      padding-bottom: var(--spacing-md);
+      border-bottom: 3px solid var(--gold-medium);
+    }
+
+    .manual-title {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .manual-subtitle {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--gold-dark);
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Sections */
+    .manual-section {
+      margin-bottom: var(--spacing-lg);
+      background: var(--white-pure);
+      padding: var(--spacing-md);
+      border: 2px solid var(--gold-light);
+      box-shadow: 0 2px 8px rgba(11, 26, 43, 0.08);
+    }
+
+    .section-header {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid var(--gold-light);
+    }
+
+    .section-content {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-dark);
+    }
+
+    /* Items specs */
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gold-extralight);
+    }
+
+    .spec-label {
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .spec-value {
+      color: var(--gold-dark);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    /* Alerte critique */
+    .alert-box {
+      background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+      border: 3px solid #d32f2f;
+      padding: var(--spacing-md);
+      margin: var(--spacing-md) 0;
+      position: relative;
+    }
+
+    .alert-header {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: #d32f2f;
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .alert-incident {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: #f57c00;
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .alert-verbatim {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      text-align: center;
+      padding: var(--spacing-md);
+      background: var(--white-pure);
+      border: 2px solid var(--gold-medium);
+      margin: var(--spacing-sm) 0;
+      letter-spacing: 2px;
+    }
+
+    .alert-details {
+      font-size: 13px;
+      color: var(--text-dark);
+      margin-top: var(--spacing-sm);
+    }
+
+    /* Témoignage */
+    .testimonial-box {
+      background: linear-gradient(135deg, var(--gold-extralight), var(--cream));
+      border-left: 4px solid var(--gold-medium);
+      padding: var(--spacing-md);
+      margin: var(--spacing-md) 0;
+      font-style: italic;
+    }
+
+    .testimonial-stars {
+      color: var(--gold-dark);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: var(--spacing-xs);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .testimonial-stars + .testimonial-stars {
+      font-size: 18px;
+      font-weight: normal;
+      text-transform: none;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      margin-bottom: var(--spacing-xs);
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      font-size: 12px;
+      color: var(--gold-medium);
+      text-align: right;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Évaluation */
+    .eval-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .eval-label {
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .eval-dots {
+      flex: 1;
+      margin: 0 var(--spacing-sm);
+      border-bottom: 2px dotted var(--gold-light);
+    }
+
+    .eval-score {
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    .eval-icon {
+      margin-left: 4px;
+      font-size: 16px;
+    }
+
+    /* Citation experte */
+    .expert-quote {
+      background: var(--white-pure);
+      border: 2px solid var(--gold-medium);
+      padding: var(--spacing-md);
+      margin: var(--spacing-md) 0;
+      font-style: italic;
+      position: relative;
+    }
+
+    .expert-quote .section-header {
+      border-bottom: none;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .expert-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .expert-author {
+      font-size: 12px;
+      color: var(--gold-medium);
+      text-align: right;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Garantie */
+    .warranty-box {
+      background: linear-gradient(135deg, var(--blue-dark), #1a2f4d);
+      border: 3px solid var(--gold-medium);
+      padding: var(--spacing-lg);
+      text-align: center;
+    }
+
+    .warranty-box .section-header {
+      color: var(--gold-light);
+      border-bottom: 2px solid var(--gold-medium);
+      justify-content: center;
+    }
+
+    .warranty-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    .manual-footer {
+      text-align: center;
+      margin-top: var(--spacing-lg);
+      padding-top: var(--spacing-md);
+      border-top: 2px solid var(--gold-light);
+      font-size: 11px;
+      color: var(--gold-medium);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="page manual-page">
+    
+    <!-- Séparateur haut -->
+    <div class="separator">◆ ◆ ◆</div>
+    
+    <!-- En-tête -->
+    <div class="manual-header">
+      <div class="manual-title">📘 Manuel d'Utilisation</div>
+      <div class="manual-subtitle">Modèle : {{PRENOM_UPPER}}</div>
+      <div class="manual-subtitle">(Édition {{ANNEE_NAISSANCE}})</div>
+    </div>
+    
+    <div class="separator">◆ ◆ ◆</div>
+
+    <!-- SPÉCIFICATIONS -->
+    <div class="manual-section">
+      <div class="section-header">
+        📋 SPÉCIFICATIONS
+      </div>
+      <div class="section-content">
+        <div class="spec-item">
+          <span class="spec-label">{{SPEC_1_LABEL}}</span>
+          <span class="spec-value">{{SPEC_1_VALUE}}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">{{SPEC_2_LABEL}}</span>
+          <span class="spec-value">{{SPEC_2_VALUE}}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">{{SPEC_3_LABEL}}</span>
+          <span class="spec-value">{{SPEC_3_VALUE}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ALERTE CRITIQUE -->
+    <div class="alert-box">
+      <div class="alert-header">⚠️ ALERTE CRITIQUE : {{ALERT_TITRE}}</div>
+      
+      <div class="alert-incident">🚨 INCIDENT "{{INCIDENT_NOM}}"</div>
+      
+      <div class="section-content">
+        <p>{{INCIDENT_CONTEXTE}}</p>
+      </div>
+      
+      <div class="alert-verbatim">
+        Verbatim : "{{INCIDENT_CITATION}}"
+      </div>
+      
+      <div class="alert-details">
+        <div class="spec-item">
+          <span class="spec-label">Durée</span>
+          <span class="spec-value">{{INCIDENT_DUREE}}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Nécessité</span>
+          <span class="spec-value">{{INCIDENT_NECESSITE}}</span>
+        </div>
+        <div class="spec-item">
+          <span class="spec-label">Impact</span>
+          <span class="spec-value">{{INCIDENT_IMPACT}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- TÉMOIGNAGE -->
+    <div class="testimonial-box">
+      <div class="testimonial-stars">💬 TÉMOIGNAGE UTILISATEUR</div>
+      <div class="testimonial-stars">{{TEMOIGNAGE_STARS}}</div>
+      <p class="testimonial-text">"{{TEMOIGNAGE_TEXTE}}"</p>
+      <div class="testimonial-author">- {{TEMOIGNAGE_AUTEUR}}</div>
+    </div>
+
+    <!-- ÉVALUATION TECHNIQUE -->
+    <div class="manual-section">
+      <div class="section-header">
+        📊 ÉVALUATION TECHNIQUE
+      </div>
+      <div class="section-content">
+        <div class="eval-item">
+          <span class="eval-label">{{EVAL_1_LABEL}}</span>
+          <span class="eval-dots"></span>
+          <span class="eval-score">{{EVAL_1_SCORE}} <span class="eval-icon">{{EVAL_1_ICON}}</span></span>
+        </div>
+        <div class="eval-item">
+          <span class="eval-label">{{EVAL_2_LABEL}}</span>
+          <span class="eval-dots"></span>
+          <span class="eval-score">{{EVAL_2_SCORE}} <span class="eval-icon">{{EVAL_2_ICON}}</span></span>
+        </div>
+        <div class="eval-item">
+          <span class="eval-label">{{EVAL_3_LABEL}}</span>
+          <span class="eval-dots"></span>
+          <span class="eval-score">{{EVAL_3_SCORE}} <span class="eval-icon">{{EVAL_3_ICON}}</span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANALYSE EXPERTE -->
+    <div class="expert-quote">
+      <div class="section-header" style="margin-bottom: var(--spacing-sm);">
+        🔍 ANALYSE EXPERTE
+      </div>
+      <p class="expert-text">"{{ANALYSE_EXPERT}}"</p>
+      <div class="expert-author">- {{EXPERT_NOM}}, {{EXPERT_TITRE}}</div>
+    </div>
+
+    <!-- GARANTIE -->
+    <div class="warranty-box">
+      <div class="section-header" style="justify-content: center; margin-bottom: var(--spacing-sm);">
+        💚 GARANTIE
+      </div>
+      <div class="warranty-text">
+        {{GARANTIE_LIGNE1}}<br>
+        {{GARANTIE_LIGNE2}}<br>
+        {{GARANTIE_LIGNE3}}
+      </div>
+    </div>
+
+    <!-- Séparateur bas -->
+    <div class="separator">◆ ◆ ◆</div>
+
+    <!-- Footer -->
+    <div class="manual-footer">
+      Document technique généré automatiquement • Ne pas reproduire sans autorisation<br>
+      © {{ANNEE_NAISSANCE}}-2025 • Tous droits réservés
+    </div>
+
+  </div>
+</body>
+</html>
+
+<!-- 
+╔════════════════════════════════════════════════════════════╗
+║  VARIABLES NÉCESSAIRES (28)                                 ║
+║  ──────────────────────────────────────────────────────    ║
+║  BASE :                                                     ║
+║  {{PRENOM_UPPER}}           - Ex: "JOJO"                   ║
+║  {{ANNEE_NAISSANCE}}        - Ex: 2005                     ║
+║                                                              ║
+║  SPÉCIFICATIONS (3×2 = 6) :                                 ║
+║  {{SPEC_1_LABEL}}           - Ex: "Capteurs humidité"      ║
+║  {{SPEC_1_VALUE}}           - Ex: "Ultrasensibles"         ║
+║  {{SPEC_2_LABEL}}           - Ex: "Système rangement"      ║
+║  {{SPEC_2_VALUE}}           - Ex: "Tri couleur obligatoire"║
+║  {{SPEC_3_LABEL}}           - Ex: "Vigilance routière"     ║
+║  {{SPEC_3_VALUE}}           - Ex: "Niveau PARANO"          ║
+║                                                              ║
+║  ALERTE CRITIQUE (7) :                                      ║
+║  {{ALERT_TITRE}}            - Ex: "DÉFAILLANCE CONNUE"     ║
+║  {{INCIDENT_NOM}}           - Ex: "DOS D'ÂNE"              ║
+║  {{INCIDENT_CONTEXTE}}      - Texte contextuel             ║
+║  {{INCIDENT_CITATION}}      - Ex: "DOS D'AAAANE !"         ║
+║  {{INCIDENT_DUREE}}         - Ex: "4,7 secondes"           ║
+║  {{INCIDENT_NECESSITE}}     - Ex: "0%"                     ║
+║  {{INCIDENT_IMPACT}}        - Ex: "Fou rire généralisé"    ║
+║                                                              ║
+║  TÉMOIGNAGE (3) :                                           ║
+║  {{TEMOIGNAGE_STARS}}       - Ex: "⭐⭐⭐⭐⭐"              ║
+║  {{TEMOIGNAGE_TEXTE}}       - Citation utilisateur         ║
+║  {{TEMOIGNAGE_AUTEUR}}      - Ex: "Un conducteur..."       ║
+║                                                              ║
+║  ÉVALUATION (3×3 = 9) :                                     ║
+║  {{EVAL_1_LABEL}}           - Ex: "Détection danger"       ║
+║  {{EVAL_1_SCORE}}           - Ex: "3/20"                   ║
+║  {{EVAL_1_ICON}}            - Ex: "⚠️"                     ║
+║  (× 3 items)                                                ║
+║                                                              ║
+║  ANALYSE (3) :                                              ║
+║  {{ANALYSE_EXPERT}}         - Citation experte             ║
+║  {{EXPERT_NOM}}             - Ex: "Dr. Expertise"          ║
+║  {{EXPERT_TITRE}}           - Ex: "Labo Comportemental"    ║
+║                                                              ║
+║  GARANTIE (3) :                                             ║
+║  {{GARANTIE_LIGNE1}}        - Ex: "Modèle unique."         ║
+║  {{GARANTIE_LIGNE2}}        - Ex: "Défauts inclus."        ║
+║  {{GARANTIE_LIGNE3}}        - Ex: "On ne changerait rien." ║
+╚════════════════════════════════════════════════════════════╝
+-->

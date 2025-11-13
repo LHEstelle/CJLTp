@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Contexte du Jour</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    .context-container {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .context-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xl);
+    }
+
+    .context-title {
+      font-size: 32px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .context-subtitle {
+      font-size: 14px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .article-section {
+      margin-bottom: var(--spacing-xl);
+      padding: var(--spacing-lg);
+      background: var(--cream);
+      border-left: 4px solid var(--gold-light);
+    }
+
+    .article-section-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-md);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-sm);
+    }
+
+    .article-text {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--blue-dark);
+    }
+
+    .article-text p {
+      margin-bottom: var(--spacing-md);
+    }
+
+    .article-text strong {
+      color: var(--gold-dark);
+      font-weight: 600;
+    }
+
+    .person-spotlight {
+      background: var(--white-pure);
+      padding: var(--spacing-md);
+      margin: var(--spacing-sm) 0;
+      border: 1px solid var(--gray-light);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .person-spotlight-name {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .person-spotlight-text {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--blue-light);
+    }
+
+    .fun-fact {
+      background: var(--gold-extralight);
+      padding: var(--spacing-md);
+      margin: var(--spacing-lg) 0;
+      border: 2px dashed var(--gold-medium);
+      text-align: center;
+    }
+
+    .fun-fact-icon {
+      font-size: 32px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .fun-fact-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .fun-fact-text {
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--blue-dark);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="context-container">
+      
+      <!-- En-tête -->
+      <div class="context-header">
+        <h2 class="context-title">Ce jour dans l'Histoire</h2>
+        <div class="ornament-line"></div>
+        <p class="context-subtitle">Comprendre le monde où tu es arrivé(e)</p>
+      </div>
+
+      <!-- Section : Contexte général -->
+      <div class="article-section">
+        <div class="article-section-title">
+          <span>🌍</span>
+          <span>L'époque</span>
+        </div>
+        <div class="article-text text-responsive">
+          {{CONTEXTE_GENERAL}}
+        </div>
+      </div>
+
+      <!-- Section : Les personnalités -->
+      <div class="article-section">
+        <div class="article-section-title">
+          <span>👤</span>
+          <span>Les visages de ce jour</span>
+        </div>
+        
+        <div class="person-spotlight">
+          <div class="person-spotlight-name">{{NAISSANCE_1_NOM}}</div>
+          <div class="person-spotlight-text">{{NAISSANCE_1_EXPLICATION}}</div>
+        </div>
+
+        <div class="person-spotlight">
+          <div class="person-spotlight-name">{{NAISSANCE_2_NOM}}</div>
+          <div class="person-spotlight-text">{{NAISSANCE_2_EXPLICATION}}</div>
+        </div>
+
+        <div class="person-spotlight">
+          <div class="person-spotlight-name">{{DECES_1_NOM}}</div>
+          <div class="person-spotlight-text">{{DECES_1_EXPLICATION}}</div>
+        </div>
+
+        <div class="person-spotlight">
+          <div class="person-spotlight-name">{{DECES_2_NOM}}</div>
+          <div class="person-spotlight-text">{{DECES_2_EXPLICATION}}</div>
+        </div>
+      </div>
+
+      <!-- Section : Le cinéma -->
+      <div class="article-section">
+        <div class="article-section-title">
+          <span>🎬</span>
+          <span>Le cinéma de cette époque</span>
+        </div>
+        <div class="article-text">
+          <p><strong>{{FILM_CULTE_ANNEE}}</strong> — {{FILM_CULTE_EXPLICATION}}</p>
+          <p><strong>{{FILM_JOUR_PRECISE}}</strong> — {{FILM_JOUR_EXPLICATION}}</p>
+        </div>
+      </div>
+
+      <!-- Fun Fact -->
+      <div class="fun-fact">
+        <div class="fun-fact-icon">💡</div>
+        <div class="fun-fact-title">Le saviez-vous ?</div>
+        <div class="fun-fact-text">
+          {{FUN_FACT}}
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
