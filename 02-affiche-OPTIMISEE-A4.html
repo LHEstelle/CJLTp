@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Affiche du {{DATE_COMPLETE_FR}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+  <style>
+    /* Optimisations compactes pour A4 */
+    .affiche-page {
+      background: linear-gradient(to bottom, var(--cream), var(--white-pure));
+    }
+
+    /* En-tête */
+    .affiche-header {
+      text-align: center;
+      padding: var(--spacing-md) 0;
+      border-bottom: 2px solid var(--gold-light);
+      margin-bottom: var(--spacing-md);
+    }
+
+    .affiche-date {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      color: var(--blue-dark);
+      margin-bottom: 4px;
+      letter-spacing: 2px;
+    }
+
+    .affiche-subtitle {
+      font-size: 10px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* ÉVÉNEMENT HERO */
+    .event-hero {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-medium));
+      color: var(--white-soft);
+      padding: var(--spacing-md);
+      margin-bottom: var(--spacing-sm);
+      text-align: center;
+      border: 2px solid var(--gold-light);
+      position: relative;
+    }
+
+    .event-hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: var(--gold-gradient);
+    }
+
+    .event-badge {
+      background: var(--gold-medium);
+      color: var(--blue-dark);
+      padding: 3px 12px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+
+    .event-title {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+      line-height: 1.2;
+    }
+
+    .event-description {
+      font-size: 11px;
+      line-height: 1.4;
+    }
+
+    /* SECTION COMPACTE */
+    .compact-section {
+      background: var(--white-pure);
+      border: 2px solid var(--gold-light);
+      padding: var(--spacing-sm);
+      margin-bottom: var(--spacing-sm);
+      position: relative;
+    }
+
+    .section-label {
+      position: absolute;
+      top: -9px;
+      left: 12px;
+      background: var(--blue-dark);
+      color: var(--gold-light);
+      padding: 3px 10px;
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .section-content {
+      padding-top: 6px;
+    }
+
+    /* Grille 2 colonnes COMPACTE */
+    .two-col-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+    }
+
+    /* Items liste */
+    .list-item {
+      padding: 6px 0;
+      border-bottom: 1px solid var(--gray-light);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .list-item:last-child {
+      border-bottom: none;
+    }
+
+    .item-name {
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--blue-dark);
+      line-height: 1.2;
+      flex: 1;
+    }
+
+    .item-year {
+      font-size: 10px;
+      color: var(--gold-medium);
+      font-style: italic;
+      white-space: nowrap;
+    }
+
+    /* Culture items */
+    .culture-grid {
+      display: grid;
+      gap: 6px;
+    }
+
+    .culture-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px;
+      background: var(--cream);
+      border-left: 2px solid var(--gold-light);
+    }
+
+    .culture-icon {
+      font-size: 24px;
+      flex-shrink: 0;
+    }
+
+    .culture-text {
+      flex: 1;
+    }
+
+    .culture-label {
+      font-size: 9px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .culture-value {
+      font-size: 11px;
+      color: var(--blue-dark);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+
+    /* Stats monde */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-top: 8px;
+    }
+
+    .stat-box {
+      text-align: center;
+      padding: 10px 6px;
+      background: var(--cream);
+      border: 1px solid var(--gold-light);
+    }
+
+    .stat-icon {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .stat-value {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      color: var(--gold-medium);
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    /* Footer */
+    .affiche-footer {
+      text-align: center;
+      margin-top: var(--spacing-sm);
+      padding: var(--spacing-sm);
+      background: var(--gold-extralight);
+      border-left: 3px solid var(--gold-medium);
+    }
+
+    .footer-text {
+      font-size: 11px;
+      color: var(--blue-dark);
+      font-style: italic;
+      line-height: 1.4;
+    }
+  </style>
+</head>
+<body>
+  <div class="page affiche-page">
+    
+    <!-- En-tête -->
+    <div class="affiche-header">
+      <div class="affiche-date">{{DATE_COMPLETE_FR}}</div>
+      <div class="stars-pattern">✦ ✦ ✦</div>
+      <div class="affiche-subtitle">L'affiche du jour</div>
+    </div>
+
+    <!-- ÉVÉNEMENT PRINCIPAL -->
+    <div class="event-hero">
+      <div class="event-badge">⚡ Événement du jour</div>
+      <h2 class="event-title">{{EVENEMENT_HISTORIQUE}}</h2>
+      <p class="event-description">{{EVENEMENT_DESCRIPTION}}</p>
+    </div>
+
+    <!-- NAISSANCES & DÉCÈS (2 colonnes) -->
+    <div class="two-col-grid">
+      <div class="compact-section">
+        <div class="section-label">🎂 Né(e)s</div>
+        <div class="section-content">
+          <div class="list-item">
+            <span class="item-name">{{NAISSANCE_1_NOM}}</span>
+            <span class="item-year">{{NAISSANCE_1_ANNEE}}</span>
+          </div>
+          <div class="list-item">
+            <span class="item-name">{{NAISSANCE_2_NOM}}</span>
+            <span class="item-year">{{NAISSANCE_2_ANNEE}}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="compact-section">
+        <div class="section-label">🕯️ Décédé(e)s</div>
+        <div class="section-content">
+          <div class="list-item">
+            <span class="item-name">{{DECES_1_NOM}}</span>
+            <span class="item-year">{{DECES_1_ANNEE}}</span>
+          </div>
+          <div class="list-item">
+            <span class="item-name">{{DECES_2_NOM}}</span>
+            <span class="item-year">{{DECES_2_ANNEE}}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- GRILLE 2 COLONNES : Culture + Météo -->
+    <div class="two-col-grid">
+      <!-- Culture -->
+      <div class="compact-section">
+        <div class="section-label">🎬 Culture</div>
+        <div class="section-content">
+          <div class="culture-grid">
+            <div class="culture-item">
+              <div class="culture-icon">🎵</div>
+              <div class="culture-text">
+                <div class="culture-label">Chanson #1</div>
+                <div class="culture-value">{{CHANSON_TOP}}</div>
+              </div>
+            </div>
+            <div class="culture-item">
+              <div class="culture-icon">🎬</div>
+              <div class="culture-text">
+                <div class="culture-label">Film culte</div>
+                <div class="culture-value">{{FILM_CULTE_ANNEE}}</div>
+              </div>
+            </div>
+            <div class="culture-item">
+              <div class="culture-icon">🎞️</div>
+              <div class="culture-text">
+                <div class="culture-label">Sorti ce jour</div>
+                <div class="culture-value">{{FILM_JOUR_PRECISE}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Météo -->
+      <div class="compact-section">
+        <div class="section-label">☀️ La météo</div>
+        <div class="section-content">
+          <div class="culture-grid">
+            <div class="culture-item">
+              <div class="culture-icon">{{METEO_ICONE}}</div>
+              <div class="culture-text">
+                <div class="culture-label">Météo du jour</div>
+                <div class="culture-value">{{METEO_DESCRIPTION}}</div>
+              </div>
+            </div>
+            <div class="culture-item">
+              <div class="culture-icon">🌡️</div>
+              <div class="culture-text">
+                <div class="culture-label">Température</div>
+                <div class="culture-value">{{METEO_TEMP}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS DU MONDE (simplifié) -->
+    <div class="compact-section">
+      <div class="section-label">🌍 Le monde</div>
+      <div class="section-content">
+        <div class="stats-grid">
+          <div class="stat-box">
+            <div class="stat-icon">🥖</div>
+            <span class="stat-value">{{PRIX_PAIN}}</span>
+            <div class="stat-label">Prix pain</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-icon">🇫🇷</div>
+            <span class="stat-value">{{POPULATION_FRANCE}}</span>
+            <div class="stat-label">France</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-icon">🌍</div>
+            <span class="stat-value">{{POPULATION_MONDE}}</span>
+            <div class="stat-label">Monde</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="affiche-footer">
+      <p class="footer-text">
+        → Qui sont ces personnes ? Pourquoi ce jour compte ?<br>
+        <strong>Réponses page suivante</strong>
+      </p>
+    </div>
+
+  </div>
+</body>
+</html>
