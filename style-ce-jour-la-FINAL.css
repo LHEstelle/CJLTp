@@ -1893,3 +1893,128 @@ journée d'époque
 /* ============================================
 Stats vie
    ============================================ */
+    .stats-container {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .stats-header {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .stats-title {
+      font-size: 28px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .stats-subtitle {
+      font-size: 12px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .stats-age {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      color: var(--gold-medium);
+      margin: var(--spacing-md) 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .stat-card {
+      background: var(--white-pure);
+      border: 2px solid var(--gold-light);
+      padding: var(--spacing-xs);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+
+    .stat-icon {
+      font-size: 24px;
+      margin-bottom: 4px;
+    }
+
+    .stat-number {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold-medium);
+      display: block;
+      margin-bottom: 4px;
+      word-break: break-all;
+      line-height: 1.1;
+    }
+
+    .stat-label {
+      font-size: 9px;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    .stats-humanity {
+      margin-top: var(--spacing-sm);
+      padding: var(--spacing-md);
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-medium));
+      color: var(--white-soft);
+      text-align: center;
+    }
+
+    .stats-humanity-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      color: var(--gold-light);
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .stats-humanity-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+
+    .humanity-item {
+      padding: var(--spacing-xs);
+      border: 1px solid rgba(224, 192, 103, 0.3);
+    }
+
+    .humanity-number {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--gold-light);
+      margin-bottom: 4px;
+    }
+
+    .humanity-label {
+      font-size: 9px;
+      color: var(--gold-extralight);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      line-height: 1.2;
+    }
+
+    .stats-footer {
+      margin-top: var(--spacing-sm);
+      text-align: center;
+      font-family: var(--font-decorative);
+      font-size: 12px;
+      color: var(--blue-light);
+      font-style: italic;
+    }
+
+
+
+/* ============================================
+message personnel
+   ============================================ */
