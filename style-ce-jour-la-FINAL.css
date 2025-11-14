@@ -1313,3 +1313,281 @@ fiction historique
 /* ============================================
 maunuel utilisation
    ============================================ */
+    /* Style manuel Art Déco */
+    .manual-page {
+      background: var(--cream);
+      padding: var(--spacing-lg);
+      position: relative;
+    }
+
+    /* Lignes de séparation */
+    .separator {
+      color: var(--gold-medium);
+      font-size: 16px;
+      letter-spacing: 4px;
+      line-height: 1;
+      margin: var(--spacing-md) 0;
+      text-align: center;
+    }
+
+    /* En-tête manuel */
+    .manual-header {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+      padding-bottom: var(--spacing-md);
+      border-bottom: 3px solid var(--gold-medium);
+    }
+
+    .manual-title {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .manual-subtitle {
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--gold-dark);
+      font-weight: 600;
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Sections */
+    .manual-section {
+      margin-bottom: var(--spacing-lg);
+      background: var(--white-pure);
+      padding: var(--spacing-md);
+      border: 2px solid var(--gold-light);
+      box-shadow: 0 2px 8px rgba(11, 26, 43, 0.08);
+    }
+
+    .section-header {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-sm);
+      display: flex;
+      align-items: center;
+      gap: var(--spacing-xs);
+      padding-bottom: var(--spacing-xs);
+      border-bottom: 2px solid var(--gold-light);
+    }
+
+    .section-content {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-dark);
+    }
+
+    /* Items specs */
+    .spec-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--gold-extralight);
+    }
+
+    .spec-label {
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .spec-value {
+      color: var(--gold-dark);
+      font-weight: 700;
+      text-align: right;
+    }
+
+    /* Alerte critique */
+    .alert-box {
+      background: linear-gradient(135deg, #fff5f5, #ffe5e5);
+      border: 3px solid #d32f2f;
+      padding: var(--spacing-md);
+      margin: var(--spacing-md) 0;
+      position: relative;
+    }
+
+    .alert-header {
+      font-family: var(--font-heading);
+      font-size: 16px;
+      font-weight: 700;
+      color: #d32f2f;
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .alert-incident {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: #f57c00;
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .alert-verbatim {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      text-align: center;
+      padding: var(--spacing-md);
+      background: var(--white-pure);
+      border: 2px solid var(--gold-medium);
+      margin: var(--spacing-sm) 0;
+      letter-spacing: 2px;
+    }
+
+    .alert-details {
+      font-size: 13px;
+      color: var(--text-dark);
+      margin-top: var(--spacing-sm);
+    }
+
+    /* Témoignage */
+    .testimonial-box {
+      background: linear-gradient(135deg, var(--gold-extralight), var(--cream));
+      border-left: 4px solid var(--gold-medium);
+      padding: var(--spacing-md);
+      margin: var(--spacing-md) 0;
+      font-style: italic;
+    }
+
+    .testimonial-stars {
+      color: var(--gold-dark);
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: var(--spacing-xs);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .testimonial-stars + .testimonial-stars {
+      font-size: 18px;
+      font-weight: normal;
+      text-transform: none;
+      letter-spacing: 2px;
+    }
+
+    .testimonial-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      margin-bottom: var(--spacing-xs);
+      line-height: 1.6;
+    }
+
+    .testimonial-author {
+      font-size: 12px;
+      color: var(--gold-medium);
+      text-align: right;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Évaluation */
+    .eval-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+      font-size: 14px;
+    }
+
+    .eval-label {
+      color: var(--text-dark);
+      font-weight: 500;
+    }
+
+    .eval-dots {
+      flex: 1;
+      margin: 0 var(--spacing-sm);
+      border-bottom: 2px dotted var(--gold-light);
+    }
+
+    .eval-score {
+      font-weight: 700;
+      color: var(--gold-dark);
+    }
+
+    .eval-icon {
+      margin-left: 4px;
+      font-size: 16px;
+    }
+
+    /* Citation experte */
+    .expert-quote {
+      background: var(--white-pure);
+      border: 2px solid var(--gold-medium);
+      padding: var(--spacing-md);
+      margin: var(--spacing-md) 0;
+      font-style: italic;
+      position: relative;
+    }
+
+    .expert-quote .section-header {
+      border-bottom: none;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .expert-text {
+      font-size: 14px;
+      color: var(--text-dark);
+      line-height: 1.7;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .expert-author {
+      font-size: 12px;
+      color: var(--gold-medium);
+      text-align: right;
+      font-style: normal;
+      font-weight: 600;
+    }
+
+    /* Garantie */
+    .warranty-box {
+      background: linear-gradient(135deg, var(--blue-dark), #1a2f4d);
+      border: 3px solid var(--gold-medium);
+      padding: var(--spacing-lg);
+      text-align: center;
+    }
+
+    .warranty-box .section-header {
+      color: var(--gold-light);
+      border-bottom: 2px solid var(--gold-medium);
+      justify-content: center;
+    }
+
+    .warranty-text {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--gold-light);
+      line-height: 1.8;
+    }
+
+    /* Footer */
+    .manual-footer {
+      text-align: center;
+      margin-top: var(--spacing-lg);
+      padding-top: var(--spacing-md);
+      border-top: 2px solid var(--gold-light);
+      font-size: 11px;
+      color: var(--gold-medium);
+      font-style: italic;
+    }
+
+
+/* ============================================
+miroir emotionnel
+   ============================================ */
