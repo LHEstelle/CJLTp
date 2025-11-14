@@ -2538,6 +2538,188 @@ certificat final
     }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================
-quizz
+message futur
    ============================================ */
+    .message-future-container {
+      min-height: 257mm;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: var(--spacing-xl) 0;
+    }
+
+    .message-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .message-title {
+      font-family: var(--font-decorative);
+      font-size: 32px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-md);
+      font-style: italic;
+    }
+
+    .message-date {
+      font-size: 16px;
+      color: var(--blue-light);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .message-subtitle {
+      font-size: 13px;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .writing-frame {
+      width: 100%;
+      max-width: 650px;
+      min-height: 450px;
+      border: 3px solid var(--gold-light);
+      padding: var(--spacing-xl);
+      background: var(--white-pure);
+      position: relative;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .writing-frame::before,
+    .writing-frame::after {
+      content: '✦';
+      position: absolute;
+      font-size: 24px;
+      color: var(--gold-light);
+    }
+
+    .writing-frame::before {
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .writing-frame::after {
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .writing-lines {
+      background-image: repeating-linear-gradient(
+        transparent,
+        transparent 35px,
+        var(--gray-light) 35px,
+        var(--gray-light) 36px
+      );
+      min-height: 400px;
+      padding-top: 8px;
+    }
+
+    .writing-prompt {
+      font-family: var(--font-decorative);
+      font-size: 14px;
+      color: var(--gold-medium);
+      font-style: italic;
+      margin-bottom: var(--spacing-md);
+      text-align: center;
+    }
+
+    .instructions-box {
+      margin-top: var(--spacing-xl);
+      padding: var(--spacing-md);
+      background: var(--gold-extralight);
+      border-left: 4px solid var(--gold-medium);
+      max-width: 650px;
+    }
+
+    .instructions-title {
+      font-family: var(--font-heading);
+      font-size: 14px;
+      color: var(--gold-dark);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .instructions-text {
+      font-size: 13px;
+      line-height: 1.7;
+      color: var(--blue-dark);
+    }
+
+    .instructions-text li {
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .signature-line {
+      width: 200px;
+      height: 1px;
+      background: var(--blue-dark);
+      margin: var(--spacing-xl) auto 0;
+      position: relative;
+    }
+
+    .signature-label {
+      position: absolute;
+      bottom: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: var(--blue-light);
+      white-space: nowrap;
+    }
+
+    .date-seal {
+      text-align: center;
+      margin-top: var(--spacing-xxl);
+    }
+
+    .seal-circle {
+      display: inline-block;
+      width: 100px;
+      height: 100px;
+      border: 3px solid var(--gold-medium);
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background: radial-gradient(circle, var(--gold-extralight), transparent);
+    }
+
+    .seal-year {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      color: var(--blue-dark);
+      font-weight: 700;
+    }
+
+    .seal-text {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--blue-light);
+    }
