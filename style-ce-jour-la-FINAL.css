@@ -1801,3 +1801,95 @@ capsule temporelle
 /* ============================================
 journée d'époque
    ============================================ */
+    .journee-container {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .journee-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .journee-title {
+      font-family: var(--font-decorative);
+      font-size: 36px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-md);
+      font-style: italic;
+    }
+
+    .journee-subtitle {
+      font-size: 14px;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .journee-block {
+      margin-bottom: var(--spacing-xl);
+      padding: var(--spacing-lg);
+      background: var(--cream);
+      border-left: 4px solid var(--gold-light);
+      position: relative;
+    }
+
+    .journee-block::before {
+      content: '';
+      position: absolute;
+      left: -10px;
+      top: 20px;
+      width: 12px;
+      height: 12px;
+      background: var(--gold-medium);
+      border-radius: 50%;
+      border: 3px solid var(--white-pure);
+    }
+
+    .journee-time {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-sm);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .journee-text {
+      font-family: var(--font-decorative);
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--blue-dark);
+    }
+
+    .journee-text strong {
+      color: var(--gold-dark);
+    }
+
+    .journee-sensory {
+      background: var(--white-pure);
+      padding: var(--spacing-md);
+      margin-top: var(--spacing-md);
+      border: 1px dashed var(--gold-light);
+      font-size: 13px;
+      font-style: italic;
+      color: var(--blue-light);
+    }
+
+    .journee-footer {
+      margin-top: var(--spacing-xxl);
+      padding: var(--spacing-lg);
+      background: var(--gold-extralight);
+      text-align: center;
+      border-radius: 4px;
+    }
+
+    .journee-footer-text {
+      font-family: var(--font-decorative);
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--blue-dark);
+    }
+
+/* ============================================
+Stats vie
+   ============================================ */
