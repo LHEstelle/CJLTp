@@ -2018,3 +2018,164 @@ Stats vie
 /* ============================================
 message personnel
    ============================================ */
+   .letter-page {
+      background: linear-gradient(to bottom, var(--cream), var(--white-pure));
+      min-height: 257mm;
+      padding: 30mm 25mm;
+      position: relative;
+    }
+
+    .letter-texture {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-image: 
+        repeating-linear-gradient(
+          0deg,
+          transparent,
+          transparent 2px,
+          rgba(11, 26, 43, 0.01) 2px,
+          rgba(11, 26, 43, 0.01) 4px
+        );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .letter-envelope-icon {
+      position: absolute;
+      top: 15mm;
+      right: 20mm;
+      font-size: 40px;
+      opacity: 0.1;
+      color: var(--gold-medium);
+      z-index: 0;
+    }
+
+    .letter-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .letter-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .letter-title {
+      font-family: var(--font-decorative);
+      font-size: 28px;
+      color: var(--gold-medium);
+      margin-bottom: var(--spacing-md);
+      font-style: italic;
+    }
+
+    .letter-decorative-line {
+      width: 80px;
+      height: 2px;
+      background: var(--gold-gradient);
+      margin: var(--spacing-md) auto;
+    }
+
+    .letter-subtitle {
+      font-size: 13px;
+      color: var(--blue-light);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .letter-body-container {
+      background: var(--white-pure);
+      padding: var(--spacing-xxl);
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      border-left: 3px solid var(--gold-light);
+      max-width: 650px;
+      margin: 0 auto;
+    }
+
+    .letter-body-container::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      left: 15px;
+      font-size: 80px;
+      color: var(--gold-light);
+      opacity: 0.15;
+      font-family: var(--font-decorative);
+      line-height: 1;
+    }
+
+    .letter-recipient {
+      font-family: var(--font-decorative);
+      font-size: 20px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-lg);
+      font-weight: 600;
+    }
+
+    .letter-body {
+      font-family: var(--font-decorative);
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--blue-dark);
+      text-align: justify;
+    }
+
+    .letter-body p {
+      margin-bottom: var(--spacing-md);
+      position: relative;
+      z-index: 2;
+    }
+
+    .letter-signature {
+      margin-top: var(--spacing-xxl);
+      text-align: right;
+      padding-right: var(--spacing-lg);
+    }
+
+    .signature-line {
+      font-family: var(--font-decorative);
+      font-size: 16px;
+      color: var(--blue-light);
+      margin-bottom: var(--spacing-xs);
+      font-style: italic;
+    }
+
+    .signature-name {
+      font-family: var(--font-decorative);
+      font-size: 24px;
+      color: var(--blue-dark);
+      font-weight: 600;
+      font-style: italic;
+    }
+
+    .signature-date {
+      font-size: 12px;
+      color: var(--blue-light);
+      margin-top: var(--spacing-xs);
+    }
+
+    .letter-seal {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
+      border: 2px solid var(--gold-medium);
+      border-radius: 50%;
+      background: radial-gradient(circle, var(--gold-extralight), transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: rotate(-8deg);
+      opacity: 0.7;
+      font-size: 28px;
+      z-index: 3;
+    }
+
+
+/* ============================================
+conclusion émotionnelle
+   ============================================ */
