@@ -1101,5 +1101,111 @@ carte d'identité
 
 
 /* ============================================
-expications journal
+explications journal
+   ============================================ */
+   /* Page journal */
+    .journal-page {
+      background: var(--cream);
+      padding: var(--spacing-md);
+    }
+
+    /* En-tête journal */
+    .journal-header {
+      text-align: center;
+      border-bottom: 4px double var(--blue-dark);
+      padding-bottom: var(--spacing-md);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    .journal-masthead {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: var(--spacing-xs);
+    }
+
+    .journal-date {
+      font-size: 14px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+    }
+
+    /* Titre principal */
+    .journal-hero {
+      text-align: center;
+      margin-bottom: var(--spacing-lg);
+      padding: var(--spacing-md) 0;
+      border-bottom: 2px solid var(--gold-light);
+    }
+
+    .journal-headline {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      color: var(--blue-dark);
+      line-height: 1.2;
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .journal-subhead {
+      font-size: 13px;
+      color: var(--gold-medium);
+      font-style: italic;
+      line-height: 1.4;
+    }
+
+    /* Article narratif */
+    .article-narratif {
+      background: var(--white-pure);
+      padding: var(--spacing-xl);
+      border: 2px solid var(--gold-light);
+      box-shadow: 0 2px 8px rgba(11, 26, 43, 0.08);
+    }
+
+    .article-paragraph {
+      font-family: 'Libre Baskerville', serif;
+      font-size: 15px;
+      line-height: 1.9;
+      color: var(--text-dark);
+      text-align: justify;
+      margin-bottom: var(--spacing-lg);
+      column-count: 2;
+      column-gap: var(--spacing-xl);
+    }
+
+    /* Lettrine (première lettre) */
+    .article-lettrine {
+      font-family: var(--font-heading);
+      font-size: 64px;
+      line-height: 0.8;
+      float: left;
+      color: var(--gold-dark);
+      margin: 8px 12px 0 0;
+      font-weight: 700;
+    }
+
+    /* Footer journal */
+    .journal-footer {
+      text-align: center;
+      margin-top: var(--spacing-lg);
+      padding-top: var(--spacing-md);
+      border-top: 2px solid var(--blue-dark);
+      font-size: 11px;
+      color: var(--gold-medium);
+      font-style: italic;
+    }
+
+    /* Responsive colonnes */
+    @media (max-width: 600px) {
+      .feature-body {
+        column-count: 1;
+      }
+    }
+
+/* ============================================
+fiction historique
    ============================================ */
