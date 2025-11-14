@@ -2399,3 +2399,145 @@ conclusion émotionnelle
 /* ============================================
 certificat final
    ============================================ */
+    .quiz-container {
+      padding: var(--spacing-lg) 0;
+    }
+
+    .quiz-header {
+      text-align: center;
+      margin-bottom: var(--spacing-xxl);
+    }
+
+    .quiz-title {
+      font-size: 32px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-sm);
+    }
+
+    .quiz-subtitle {
+      font-size: 14px;
+      color: var(--gold-medium);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .quiz-intro {
+      text-align: center;
+      font-size: 15px;
+      color: var(--blue-light);
+      margin-bottom: var(--spacing-xl);
+      font-style: italic;
+    }
+
+    .question-block {
+      margin-bottom: var(--spacing-xxl);
+      padding: var(--spacing-lg);
+      background: var(--cream);
+      border-left: 4px solid var(--gold-light);
+      position: relative;
+    }
+
+    .question-number {
+      position: absolute;
+      top: -15px;
+      left: 20px;
+      background: var(--gold-medium);
+      color: var(--white-pure);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 16px;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .question-text {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      color: var(--blue-dark);
+      margin-bottom: var(--spacing-md);
+      padding-left: var(--spacing-md);
+    }
+
+    .answers-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--spacing-sm);
+      margin-top: var(--spacing-md);
+    }
+
+    .answer-option {
+      padding: var(--spacing-md);
+      background: var(--white-pure);
+      border: 2px solid var(--gray-light);
+      text-align: center;
+      font-size: 14px;
+      color: var(--blue-dark);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .answer-option.correct {
+      border-color: var(--gold-medium);
+      background: var(--gold-extralight);
+    }
+
+    .answer-option.correct::after {
+      content: '✓';
+      position: absolute;
+      top: 5px;
+      right: 10px;
+      color: var(--gold-dark);
+      font-weight: 700;
+      font-size: 20px;
+    }
+
+    .answer-label {
+      font-weight: 600;
+      color: var(--gold-dark);
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: var(--spacing-xs);
+      display: block;
+    }
+
+    .quiz-score {
+      margin-top: var(--spacing-xxl);
+      padding: var(--spacing-xl);
+      background: var(--blue-dark);
+      color: var(--white-soft);
+      text-align: center;
+    }
+
+    .score-title {
+      font-family: var(--font-heading);
+      font-size: 20px;
+      color: var(--gold-light);
+      margin-bottom: var(--spacing-md);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .score-text {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--white-soft);
+    }
+
+    .quiz-footer {
+      margin-top: var(--spacing-xl);
+      text-align: center;
+      font-size: 13px;
+      color: var(--blue-light);
+      font-style: italic;
+    }
+
+
+/* ============================================
+quizz
+   ============================================ */
