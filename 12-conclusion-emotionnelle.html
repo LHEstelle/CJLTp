@@ -8,69 +8,50 @@
   <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
 </head>
 <body>
-  <div class="page">
-    <div class="conclusion-container">
-      
-      <!-- En-tête héroïque -->
-      <div class="conclusion-hero">
-        <h1 class="conclusion-title">
-          Ce qui fait de toi<br>quelqu'un d'unique
-        </h1>
-        <div class="conclusion-subtitle">Une synthèse de ton être</div>
-        <div class="ornament-line"></div>
-      </div>
+   <div class="page">
+        <div class="ornement-top"></div>
 
-      <!-- Premier bloc narratif -->
-      <div class="narrative-block">
-        <div class="narrative-text text-responsive">
-          <p>{{PARAGRAPHE_1}}</p>
+        <!-- En-tête -->
+        <div class="header">
+            <h1 class="main-title">Ce qui fait de toi<br>quelqu'un d'unique</h1>
+            <div class="divider"></div>
+            <p class="subtitle">Une synthèse de ton être</p>
         </div>
-      </div>
 
-      <!-- Constellation de qualités -->
-      <div class="qualities-constellation">
-        <div class="connection-line"></div>
-        <div class="quality-star">
-          <div class="quality-label">{{QUALITE_1}}</div>
-        </div>
-        <div class="quality-star">
-          <div class="quality-label">{{QUALITE_2}}</div>
-        </div>
-        <div class="quality-star">
-          <div class="quality-label">{{QUALITE_3}}</div>
-        </div>
-      </div>
+        <!-- Contenu -->
+        <div class="content">
+            <!-- Paragraphe 1 : Événement historique et naissance -->
+            <p class="paragraphe">
+                {{paragraphe_1}}
+            </p>
 
-      <!-- Second bloc narratif -->
-      <div class="narrative-block">
-        <div class="narrative-text text-responsive">
-          <p>{{PARAGRAPHE_2}}</p>
-        </div>
-      </div>
+            <!-- Interlude poétique avec traits -->
+            <div class="interlude">
+                <div class="interlude-content">
+                    <span class="interlude-symbol">✦</span>
+                    {{qualite_1}}, {{qualite_2}}, {{qualite_3}}
+                    <span class="interlude-symbol">✦</span>
+                </div>
+            </div>
 
-      <!-- Message final encadré -->
-      <div class="message-box">
-        <div class="message-header">Le monde a besoin de toi</div>
-        <div class="message-content">
-          {{MESSAGE_FINAL}}
-        </div>
-        <div class="signature-block">
-          <div class="signature-text">— Ce Jour-Là</div>
-        </div>
-      </div>
+            <!-- Paragraphe 2 : Traits dans la vie réelle -->
+            <p class="paragraphe">
+                {{paragraphe_2}}
+            </p>
 
-      <!-- Sceau final -->
-      <div class="final-seal">
-        <div class="seal-circle">
-          <div class="seal-stars top">✦ ✦ ✦</div>
-          <div class="seal-main-text">UNIQUE</div>
-          <div class="seal-sub-text">Certifié</div>
-          <div class="seal-stars bottom">✦ ✦ ✦</div>
+            <!-- Message final -->
+            <div class="message-final-container">
+                <p class="message-final">
+                    {{message_final}}
+                </p>
+            </div>
         </div>
-      </div>
 
+        <!-- Ornement de bas de page -->
+        <div class="footer-ornement">
+            <div class="footer-symbol">✦ ✦ ✦</div>
+        </div>
     </div>
-  </div>
 </body>
 </html>
 
