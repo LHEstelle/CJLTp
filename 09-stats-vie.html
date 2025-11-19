@@ -8,102 +8,138 @@
   <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
 </head>
 <body>
-  <div class="page">
-    <div class="stats-container">
-      
-      <!-- En-tête -->
-      <div class="stats-header">
-        <h2 class="stats-title">Toi Aujourd'hui</h2>
-        <div class="ornament-line"></div>
-        <p class="stats-subtitle">Depuis le {{DATE_COMPLETE_FR}}</p>
-        <div class="stats-age">{{AGE_ACTUEL}} ans</div>
-      </div>
-
-      <!-- Grille stats personnelles -->
-      <div class="stats-grid">
-        <div class="stat-card">
-          <div class="stat-icon">💓</div>
-          <span class="stat-number">{{BATTEMENTS_COEUR}}</span>
-          <div class="stat-label">Battements de cœur</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">🫁</div>
-          <span class="stat-number">{{RESPIRATIONS}}</span>
-          <div class="stat-label">Respirations prises</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">👣</div>
-          <span class="stat-number">{{PAS_MARCHES}}</span>
-          <div class="stat-label">Pas marchés (environ)</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">😴</div>
-          <span class="stat-number">{{HEURES_SOMMEIL}}</span>
-          <div class="stat-label">Heures de sommeil</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">🍕</div>
-          <span class="stat-number">{{REPAS_PRIS}}</span>
-          <div class="stat-label">Repas partagés</div>
-        </div>
-
-        <div class="stat-card">
-          <div class="stat-icon">🚀</div>
-          <span class="stat-number">{{KM_AUTOUR_SOLEIL}}</span>
-          <div class="stat-label">Parcourus autour du soleil</div>
-        </div>
-      </div>
-
-      <!-- Carte centrée : Orbites lunaires -->
-      <div style="display: flex; justify-content: center; margin-bottom: var(--spacing-lg);">
-        <div class="stat-card" style="width: calc((100% - 12px) / 3);">
-          <div class="stat-icon">🌙</div>
-          <span class="stat-number">{{ORBITES_LUNAIRES}}</span>
-          <div class="stat-label">Orbites de la Lune</div>
-        </div>
-      </div>
-
-      <!-- Stats humanité -->
-<div class="stats-humanity">
-        <div class="stats-humanity-title">
-          Pendant ce temps, l'humanité...
-        </div>
-        <div class="stats-humanity-grid">
-          <div class="humanity-item">
-            <div class="humanity-number">{{POPULATION_AUGMENTATION}}</div>
-            <div class="humanity-label">Croissance population mondiale</div>
-          </div>
-          <div class="humanity-item">
-            <div class="humanity-number">{{INVENTIONS}}</div>
-            <div class="humanity-label">Grandes inventions</div>
-          </div>
-          <div class="humanity-item">
-            <div class="humanity-number">{{DECOUVERTES}}</div>
-            <div class="humanity-label">Découvertes scientifiques</div>
-          </div>
+ <div class="page">
+        <h1>Toi Aujourd'hui</h1>
+        <div class="subtitle">DEPUIS LE {{date_naissance}}</div>
+        <div class="divider"></div>
+        
+        <div class="age">{{age}}</div>
+        
+        <!-- Statistiques personnelles - 2x3 = 6 cartes -->
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-icon">❤️</div>
+                <div class="stat-number">{{battements_coeur}}</div>
+                <div class="stat-label">Battements de cœur</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🫁</div>
+                <div class="stat-number">{{respirations}}</div>
+                <div class="stat-label">Respirations prises</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">👣</div>
+                <div class="stat-number">{{pas}}</div>
+                <div class="stat-label">Pas marchés (environ)</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">😴</div>
+                <div class="stat-number">{{heures_sommeil}}</div>
+                <div class="stat-label">Heures de sommeil</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🍽️</div>
+                <div class="stat-number">{{repas}}</div>
+                <div class="stat-label">Repas partagés</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">🚀</div>
+                <div class="stat-number">{{distance_soleil}}</div>
+                <div class="stat-label">Parcourus autour du soleil</div>
+            </div>
         </div>
         
-        <!-- Ajout : Augmentation prix du pain (ligne séparée) -->
-        <div style="margin-top: 12px; padding-top: 12px; border-top: 1px solid rgba(224, 192, 103, 0.3); text-align: center;">
-          <div class="humanity-item" style="border: none; display: inline-block; padding: 8px 20px;">
-            <div class="humanity-number" style="font-size: 20px;">{{AUGMENTATION_PAIN}}</div>
-            <div class="humanity-label">Le prix du pain a été multiplié</div>
-          </div>
+        <!-- Section monde -->
+        <div class="world-section">
+            <div class="world-title">Pendant ce temps, l'humanité...</div>
+            
+            <div class="world-stats">
+                <div class="world-stat">
+                    <div class="world-number">{{croissance_pop}}</div>
+                    <div class="world-label">Croissance population mondiale</div>
+                </div>
+                
+                <div class="world-stat">
+                    <div class="world-number">{{photos}}</div>
+                    <div class="world-label">Photos prises dans le monde</div>
+                </div>
+                
+                <div class="world-stat">
+                    <div class="world-number">{{smartphones}}</div>
+                    <div class="world-label">Smartphones vendus</div>
+                </div>
+                
+                <div class="world-stat">
+                    <div class="world-number">{{internet_multi}}</div>
+                    <div class="world-label">Utilisateurs internet ({{internet_detail}})</div>
+                </div>
+                
+                <div class="world-stat">
+                    <div class="world-number">{{inventions}}</div>
+                    <div class="world-label">Grandes inventions brevetées</div>
+                </div>
+                
+                <div class="world-stat">
+                    <div class="world-number">{{jeux_olympiques}}</div>
+                    <div class="world-label">Jeux Olympiques organisés</div>
+                </div>
+            </div>
+            
+            <!-- Inventions marquantes -->
+            <div class="innovations">
+                <div class="innovation-title">Deux inventions qui ont tout changé</div>
+                <div class="innovation-grid">
+                    <div class="innovation-item">
+                        <div class="innovation-name">{{invention_1_nom}}</div>
+                        <div class="innovation-year">{{invention_1_annee}}</div>
+                        <div class="innovation-desc">{{invention_1_desc}}</div>
+                    </div>
+                    
+                    <div class="innovation-item">
+                        <div class="innovation-name">{{invention_2_nom}}</div>
+                        <div class="innovation-year">{{invention_2_annee}}</div>
+                        <div class="innovation-desc">{{invention_2_desc}}</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Prix multiplications - Version compacte 4 en ligne -->
+            <div class="price-section">
+                <div class="price-title">Le coût de la vie a changé</div>
+                <div class="price-grid">
+                    <div class="price-item">
+                        <div class="price-multiplier">{{prix_pain}}</div>
+                        <div class="price-label">Pain</div>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-multiplier">{{prix_essence}}</div>
+                        <div class="price-label">Essence</div>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-multiplier">{{prix_timbre}}</div>
+                        <div class="price-label">Timbre</div>
+                    </div>
+                    
+                    <div class="price-item">
+                        <div class="price-multiplier">{{prix_cinema}}</div>
+                        <div class="price-label">Cinéma</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <!-- Footer -->
-      <p class="stats-footer">
-        Voilà le chemin parcouru depuis ce jour où tu es arrivé(e).<br>
-        Et ce n'est qu'un début.
-      </p>
-
+        
+        <div class="footnote">
+            Voilà le chemin parcouru depuis ce jour où tu es arrivé(e).<br>
+            Et ce n'est qu'un début.
+        </div>
     </div>
-  </div>
 </body>
 </html>
 
