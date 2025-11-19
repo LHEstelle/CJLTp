@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Affiche du {{DATE_COMPLETE_FR}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+</head>
+<body>
+<div class="page">
+  
+  <div class="year-stamp">
+    <div class="year-stamp-text">{{annee}}</div>
+    <div class="year-subtitle">Capsule Temporelle</div>
+  </div>
+
+  <div class="moodboard">
+    
+    <!-- IMAGE IA MOOD -->
+    <div class="mood-hero">
+      <img src="{{image_ia_mood_general}}" alt="Mood" class="mood-hero-img">
+      <div class="mood-hero-label">L'esprit {{annee}}</div>
+    </div>
+    
+    <div class="pin pin-1"></div>
+
+    <!-- 3 POLAROIDS - 2 MODE + 1 OBJET -->
+    <div class="polaroids-right">
+      <div class="mini-polaroid">
+        <img src="{{image_1}}" alt="Photo" class="mini-polaroid-img">
+        <div class="mini-polaroid-caption">{{caption_1}}</div>
+      </div>
+      <div class="mini-polaroid">
+        <img src="{{image_2}}" alt="Photo" class="mini-polaroid-img">
+        <div class="mini-polaroid-caption">{{caption_2}}</div>
+      </div>
+      <div class="mini-polaroid">
+        <img src="{{image_3}}" alt="Photo" class="mini-polaroid-img">
+        <div class="mini-polaroid-caption">{{caption_3}}</div>
+      </div>
+    </div>
+    
+    <div class="pin pin-2"></div>
+
+    <!-- CHANSON #1 -->
+    <div class="postit-song">
+      <div class="postit-song-title">🎵 CHANSON #1</div>
+      <div class="postit-song-main">{{chanson_titre}}</div>
+      <div class="postit-song-artist">{{chanson_artiste}}</div>
+    </div>
+
+    <!-- POST-IT 1 - CULTURE POP -->
+    <div class="postit postit-1">
+      <div class="postit-title">🎬 Culture Pop</div>
+      <div class="postit-item">
+        <span class="postit-item-icon">📺</span>
+        <span class="postit-item-label">Série :</span> {{serie_tv}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🎬</span>
+        <span class="postit-item-label">Film :</span> {{film}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">📚</span>
+        <span class="postit-item-label">Livre :</span> {{livre}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">📖</span>
+        <span class="postit-item-label">BD :</span> {{bd}}
+      </div>
+    </div>
+    
+    <div class="pin pin-3"></div>
+
+    <!-- POST-IT 2 - ÉVÉNEMENTS -->
+    <div class="postit postit-2">
+      <div class="postit-title">🌍 Cette année-là</div>
+      <div class="postit-item">
+        <span class="postit-item-icon">📰</span>
+        {{evenement_1}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🎪</span>
+        {{evenement_2}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🇫🇷</span>
+        <span class="postit-item-label">Président :</span> {{president_fr}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">⭐</span>
+        <span class="postit-item-label">Née :</span> {{celebrite_nee}}
+      </div>
+    </div>
+    
+    <div class="pin pin-4"></div>
+
+    <!-- POST-IT 3 - GOÛTERS/JOUETS -->
+    <div class="postit postit-3">
+      <div class="postit-title">🍬 Goûters & Jouets</div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🍫</span>
+        {{gouter_1}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🍭</span>
+        {{gouter_2}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🧸</span>
+        {{jouet_1}}
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🎮</span>
+        {{jouet_2}}
+      </div>
+    </div>
+
+    <!-- POST-IT 4 - CHIFFRES -->
+    <div class="postit postit-4">
+      <div class="postit-title">📊 Chiffres Clés</div>
+      <div class="postit-item">
+        <span class="postit-item-icon">👶</span>
+        {{naissances}} naissances
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">🌍</span>
+        {{population}} Mds habitants
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">💿</span>
+        {{albums_vendus}} albums
+      </div>
+      <div class="postit-item">
+        <span class="postit-item-icon">💰</span>
+        SMIC : {{smic}}€/h
+      </div>
+    </div>
+
+    <!-- ÉTIQUETTES PRIX -->
+    <div class="price-tags">
+      <div class="price-tag">
+        <div class="price-tag-label">Baguette</div>
+        <div class="price-tag-value">{{prix_baguette}}€</div>
+      </div>
+      <div class="price-tag">
+        <div class="price-tag-label">Essence</div>
+        <div class="price-tag-value">{{prix_essence}}€</div>
+      </div>
+      <div class="price-tag">
+        <div class="price-tag-label">Timbre</div>
+        <div class="price-tag-value">{{prix_timbre}}€</div>
+      </div>
+      <div class="price-tag">
+        <div class="price-tag-label">Cinéma</div>
+        <div class="price-tag-value">{{prix_cinema}}€</div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>
