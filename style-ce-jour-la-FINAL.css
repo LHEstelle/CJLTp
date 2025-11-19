@@ -2102,6 +2102,438 @@ miroir emotionnel
     }
 
 
+
+
+
+
+
+
+/* ============================================
+moodboard annee
+   ============================================ */
+
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    :root {
+      --blue-dark: #0b1a2b;
+      --gold-b: #9e7b23;
+      --gold-c: #e0c067;
+    }
+    
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Montserrat:wght@400;600;700&family=Permanent+Marker&family=Caveat:wght@400;700&display=swap');
+    
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #d5d2c8;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    .page {
+      width: 210mm;
+      height: 297mm;
+      margin: 0 auto;
+      padding: 8mm;
+      background: #e8dcc8;
+      box-sizing: border-box;
+      position: relative;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+      overflow: hidden;
+      background-image: url('https://www.transparenttextures.com/patterns/wood-pattern.png');
+      background-color: #e8dcc8;
+    }
+    
+    /* TITRE */
+    .year-stamp {
+      position: absolute;
+      top: 8mm;
+      left: 50%;
+      transform: translateX(-50%) rotate(-1deg);
+      background: var(--blue-dark);
+      padding: 12px 32px;
+      border: 3px solid var(--gold-c);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      z-index: 100;
+    }
+    
+    .year-stamp-text {
+      font-family: 'Playfair Display', serif;
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--gold-c);
+      letter-spacing: 5px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+    
+    .year-subtitle {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      color: var(--gold-c);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      margin-top: 3px;
+      font-weight: 300;
+    }
+    
+    .moodboard {
+      margin-top: 42mm;
+      position: relative;
+      height: 238mm;
+    }
+    
+    /* IMAGE IA MOOD */
+    .mood-hero {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%) rotate(-0.5deg);
+      width: 155mm;
+      height: 78mm;
+      background: white;
+      padding: 9px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      z-index: 5;
+    }
+    
+    .mood-hero::before {
+      content: '';
+      position: absolute;
+      top: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 55%;
+      height: 18px;
+      background: rgba(255, 253, 208, 0.6);
+      border-left: 1px solid rgba(200, 200, 150, 0.3);
+      border-right: 1px solid rgba(200, 200, 150, 0.3);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    .mood-hero-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.1) contrast(1.05);
+    }
+    
+    .mood-hero-label {
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--blue-dark);
+      color: var(--gold-c);
+      padding: 6px 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      border: 2px solid var(--gold-c);
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      text-transform: uppercase;
+    }
+    
+    /* 3 MINI POLAROIDS - 2 MODE + 1 OBJET */
+    .polaroids-right {
+      position: absolute;
+      top: 10mm;
+      right: 7mm;
+      z-index: 12;
+    }
+    
+    .mini-polaroid {
+      background: white;
+      padding: 5px 5px 20px 5px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+      margin-bottom: 5mm;
+      width: 35mm;
+      position: relative;
+    }
+    
+    .mini-polaroid:nth-child(1) {
+      transform: rotate(4deg);
+    }
+    
+    .mini-polaroid:nth-child(2) {
+      transform: rotate(-3deg);
+    }
+    
+    .mini-polaroid:nth-child(3) {
+      transform: rotate(5deg);
+    }
+    
+    .mini-polaroid-img {
+      width: 100%;
+      height: 30mm;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .mini-polaroid-caption {
+      position: absolute;
+      bottom: 3px;
+      left: 5px;
+      right: 5px;
+      font-family: 'Caveat', cursive;
+      font-size: 8px;
+      color: #333;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    .mini-polaroid::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40%;
+      height: 12px;
+      background: rgba(255, 253, 208, 0.5);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    /* CHANSON - Gauche haut */
+    .postit-song {
+      position: absolute;
+      top: 90mm;
+      left: 7mm;
+      background: #fff59d;
+      padding: 12px 14px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.25);
+      font-family: 'Permanent Marker', cursive;
+      z-index: 20;
+      width: 70mm;
+      border: 3px solid var(--gold-b);
+      transform: rotate(-3deg);
+    }
+    
+    .postit-song::before {
+      content: '';
+      position: absolute;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 45%;
+      height: 15px;
+      background: rgba(255, 253, 208, 0.6);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    .postit-song-title {
+      font-size: 9px;
+      color: var(--blue-dark);
+      margin-bottom: 7px;
+      text-align: center;
+      font-weight: 700;
+    }
+    
+    .postit-song-main {
+      font-size: 14px;
+      color: var(--blue-dark);
+      margin-bottom: 4px;
+      text-align: center;
+      line-height: 1.25;
+    }
+    
+    .postit-song-artist {
+      font-size: 11px;
+      color: #555;
+      text-align: center;
+    }
+    
+    /* POST-IT BASE */
+    .postit {
+      position: absolute;
+      background: #fef9b5;
+      padding: 9px 11px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      font-family: 'Caveat', cursive;
+    }
+    
+    .postit::before {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 35%;
+      height: 11px;
+      background: rgba(255, 253, 208, 0.5);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+    }
+    
+    .postit-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      margin-bottom: 7px;
+      text-align: center;
+      border-bottom: 2px solid var(--blue-dark);
+      padding-bottom: 3px;
+    }
+    
+    .postit-item {
+      font-size: 12px;
+      line-height: 1.5;
+      margin-bottom: 4px;
+      color: #333;
+    }
+    
+    .postit-item-icon {
+      font-size: 14px;
+      margin-right: 4px;
+    }
+    
+    .postit-item-label {
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+    
+    /* 4 POST-ITS - BIEN ESPACÉS */
+    
+    /* Culture Pop - Gauche milieu */
+    .postit-1 {
+      top: 121mm;
+      left: 8mm;
+      width: 70mm;
+      background: #fef9b5;
+      transform: rotate(-2deg);
+      z-index: 15;
+    }
+    
+    /* Événements - Droite milieu */
+    .postit-2 {
+      top: 125mm;
+      right: 10mm;
+      width: 68mm;
+      background: #ffe4e4;
+      transform: rotate(3deg);
+      z-index: 14;
+    }
+    
+    /* Goûters/Jouets - Gauche bas */
+    .postit-3 {
+      bottom: 30mm;
+      left: 9mm;
+      width: 65mm;
+      background: #ffe4f9;
+      transform: rotate(2deg);
+      z-index: 13;
+    }
+    
+    /* Chiffres - Droite bas */
+    .postit-4 {
+      bottom: 32mm;
+      right: 11mm;
+      width: 68mm;
+      background: #e4ffe4;
+      transform: rotate(-2deg);
+      z-index: 12;
+    }
+    
+    /* ÉTIQUETTES PRIX - Bas centre */
+    .price-tags {
+      position: absolute;
+      bottom: 8mm;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 5mm;
+      z-index: 18;
+    }
+    
+    .price-tag {
+      background: white;
+      border: 2px solid var(--gold-b);
+      padding: 5px 10px;
+      font-family: 'Montserrat', sans-serif;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .price-tag:nth-child(1) {
+      transform: rotate(-2deg);
+    }
+    
+    .price-tag:nth-child(2) {
+      transform: rotate(1deg);
+    }
+    
+    .price-tag:nth-child(3) {
+      transform: rotate(-3deg);
+    }
+    
+    .price-tag:nth-child(4) {
+      transform: rotate(2deg);
+    }
+    
+    .price-tag-label {
+      font-size: 7px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--gold-b);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    
+    .price-tag-value {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--blue-dark);
+      line-height: 1;
+    }
+    
+    /* ÉPINGLES */
+    .pin {
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      background: radial-gradient(circle, #e63946, #a4161a);
+      border-radius: 50%;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 1px 1px rgba(255,255,255,0.3);
+      z-index: 50;
+    }
+    
+    .pin::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1.5px;
+      height: 4px;
+      background: linear-gradient(to bottom, #8d99ae, #2b2d42);
+      box-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    
+    .pin-1 { top: 78mm; left: 50%; transform: translateX(-50%); }
+    .pin-2 { top: 42mm; right: 43mm; }
+    .pin-3 { top: 143mm; left: 40mm; }
+    .pin-4 { top: 146mm; right: 43mm; }
+    
+    @media print {
+      body {
+        background: white;
+        padding: 0;
+      }
+      .page {
+        margin: 0;
+        box-shadow: none;
+        page-break-after: always;
+      }
+    }
+
+
 /* ============================================
 capsule temporelle
    ============================================ */
