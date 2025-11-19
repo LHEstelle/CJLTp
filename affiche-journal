@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>L'Affiche du {{DATE_COMPLETE_FR}}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+</head>
+<body>
+<div class="page">
+  
+  <div class="masthead">
+    <div class="journal-name">CE JOUR-LÀ</div>
+    <div class="date-info">Vendredi 25 novembre 2005</div>
+  </div>
+
+  <div class="headline-section">
+    <p class="kicker">Pendant que tu arrivais dans ce monde</p>
+    <h1 class="main-headline">{{titre_evenement}}</h1>
+ <div class="story">
+  {{recit_evenement}}
+</div>
+  </div>
+
+  <div class="event-photo">
+    <img src="{{image_ia_evenement}}" alt="Événement" class="event-photo-img">
+    <p class="event-photo-caption">{{caption_image_evenement}}</p>
+  </div>
+
+  <div class="section-title">L'Ambiance ce Jour</div>
+  <div class="ambiance-grid">
+    
+    <div class="ambiance-column">
+      <div class="ambiance-header">Météo</div>
+      <span class="ambiance-icon">🌤️</span>
+      <div class="ambiance-content">
+        {{meteo}}<br>
+        {{temperature}}°C<br>
+        <small style="font-size: 9px; color: var(--gris);">à {{ville}}</small>
+      </div>
+    </div>
+
+    <div class="ambiance-column">
+      <div class="ambiance-header">Lune</div>
+      <span class="ambiance-icon">{{lune_emoji}}</span>
+      <div class="ambiance-content">
+        {{phase_lune}}
+      </div>
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="main-layout">
+    
+    <div class="main-column">
+      <div class="section-title">Ce Jour dans l'Histoire</div>
+      <div class="histoire-list">
+        
+        <div class="histoire-item">
+          <span class="histoire-label">⭐ Né ce jour</span>
+          {{celebrite_nee}}
+        </div>
+
+        <div class="histoire-item">
+          <span class="histoire-label">🕊️ Décédé ce jour</span>
+          {{celebrite_decedee}}
+        </div>
+
+        <div class="histoire-item">
+          <span class="histoire-label">📜 Événement historique</span>
+          <span class="histoire-year">{{annee}}</span> : {{evenement_court}}
+        </div>
+
+      </div>
+    </div>
+
+    <div class="sidebar">
+      
+      <div class="sidebar-box">
+        <div class="sidebar-title sidebar-title-light">En Salles</div>
+        <span class="sidebar-icon">🎬</span>
+        <div class="sidebar-content">{{film_sorti}}</div>
+      </div>
+
+      <div class="sidebar-box sidebar-box-dark">
+        <div class="sidebar-title sidebar-title-dark">✦ Les Astres</div>
+        <p class="sidebar-content sidebar-content-dark">
+          {{horoscope_naissance}}
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="section-divider"></div>
+
+  <div class="info-bar">
+    <p class="info-text">
+      Ce jour-là, environ <span class="info-number">{{nb_naissances}}</span> bébés sont nés dans le monde. Tu faisais partie de cette vague.
+    </p>
+  </div>
+
+  <div class="nasa-section">
+    <div class="nasa-title">🔭 Le Cosmos ce Jour</div>
+    <img src="{{nasa_url}}" alt="NASA APOD" class="nasa-img">
+    <p class="nasa-caption">{{nasa_caption}}</p>
+  </div>
+
+</div>
+</body>
+</html>
