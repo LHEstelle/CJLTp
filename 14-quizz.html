@@ -8,159 +8,286 @@
   <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
 </head>
 <body>
-  <div class="page">
-    <div class="quiz-container">
-      
-      <!-- En-tête -->
-      <div class="quiz-header">
-        <h2 class="quiz-title">Le Grand Quizz</h2>
-        <div class="ornament-line"></div>
-        <p class="quiz-subtitle">Connais-tu bien {{PRENOM}} ?</p>
-      </div>
-
-      <p class="quiz-intro">
-        5 questions pour tester tes connaissances.<br>
-        Les bonnes réponses sont indiquées. Compte tes points !
-      </p>
-
-      <!-- Question 1 -->
-      <div class="question-block">
-        <div class="question-number">1</div>
-        <div class="question-text">{{QUESTION_1}}</div>
-        <div class="answers-grid">
-          <div class="answer-option">
-            <span class="answer-label">A</span>
-            {{REPONSE_1A}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">B</span>
-            {{REPONSE_1B}}
-          </div>
-          <div class="answer-option correct">
-            <span class="answer-label">C</span>
-            {{REPONSE_1C}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">D</span>
-            {{REPONSE_1D}}
-          </div>
+   <div class="page">
+        
+        <div class="header">
+            <h1 class="main-title">Le Grand Quizz</h1>
+            <p class="subtitle">Me connais-tu vraiment ?</p>
         </div>
-      </div>
 
-      <!-- Question 2 -->
-      <div class="question-block">
-        <div class="question-number">2</div>
-        <div class="question-text">{{QUESTION_2}}</div>
-        <div class="answers-grid">
-          <div class="answer-option">
-            <span class="answer-label">A</span>
-            {{REPONSE_2A}}
-          </div>
-          <div class="answer-option correct">
-            <span class="answer-label">B</span>
-            {{REPONSE_2B}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">C</span>
-            {{REPONSE_2C}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">D</span>
-            {{REPONSE_2D}}
-          </div>
+        <div class="instructions">
+            <p class="instructions-text">Réponds à ces 14 questions selon ce que tu sais de moi</p>
+            <p class="instructions-name">
+                Ton prénom : <span class="name-line"></span>
+            </p>
         </div>
-      </div>
 
-      <!-- Question 3 -->
-      <div class="question-block">
-        <div class="question-number">3</div>
-        <div class="question-text">{{QUESTION_3}}</div>
-        <div class="answers-grid">
-          <div class="answer-option correct">
-            <span class="answer-label">A</span>
-            {{REPONSE_3A}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">B</span>
-            {{REPONSE_3B}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">C</span>
-            {{REPONSE_3C}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">D</span>
-            {{REPONSE_3D}}
-          </div>
+        <div class="questions-container">
+            
+            <!-- Question 1 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">1</div>
+                    <div class="question-text">Si tu devais me décrire en un mot...</div>
+                </div>
+                <div class="answer-lines">
+                    <div class="answer-line short"></div>
+                </div>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">2</div>
+                    <div class="question-text">Je préfère...</div>
+                </div>
+                <div class="answer-binary">
+                    <div class="binary-option">
+                        <div class="binary-circle"></div>
+                        <span class="binary-label">Donner</span>
+                    </div>
+                    <div class="binary-option">
+                        <div class="binary-circle"></div>
+                        <span class="binary-label">Recevoir</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">3</div>
+                    <div class="question-text">Ma plus grande peur, c'est...</div>
+                </div>
+                <div class="answer-lines">
+                    <div class="answer-line"></div>
+                </div>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">4</div>
+                    <div class="question-text">Mon niveau d'organisation</div>
+                </div>
+                <div class="scale-container">
+                    <div class="scale-labels">
+                        <span class="scale-label">Chaos</span>
+                        <span class="scale-label">Organisé</span>
+                    </div>
+                    <div class="scale-items">
+                        <div class="scale-item">1</div>
+                        <div class="scale-item">2</div>
+                        <div class="scale-item">3</div>
+                        <div class="scale-item">4</div>
+                        <div class="scale-item">5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">5</div>
+                    <div class="question-text">Qu'est-ce qui me fait rire ?</div>
+                </div>
+                <div class="answer-lines">
+                    <div class="answer-line"></div>
+                </div>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">6</div>
+                    <div class="question-text">Face à un conflit, je suis...</div>
+                </div>
+                <div class="answer-checkbox-group">
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div>
+                        <span class="checkbox-label">Direct(e)</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div>
+                        <span class="checkbox-label">Diplomate</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div>
+                        <span class="checkbox-label">Fuyant(e)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">7</div>
+                    <div class="question-text">Dans 10 ans, tu me vois...</div>
+                </div>
+                <div class="answer-lines">
+                    <div class="answer-line"></div>
+                    <div class="answer-line"></div>
+                </div>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">8</div>
+                    <div class="question-text">Je suis plutôt...</div>
+                </div>
+                <div class="answer-binary">
+                    <div class="binary-option">
+                        <div class="binary-circle"></div>
+                        <span class="binary-label">Du matin</span>
+                    </div>
+                    <div class="binary-option">
+                        <div class="binary-circle"></div>
+                        <span class="binary-label">Du soir</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">9</div>
+                    <div class="question-text">Ce que je ne supporte pas...</div>
+                </div>
+                <div class="answer-lines">
+                    <div class="answer-line"></div>
+                </div>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">10</div>
+                    <div class="question-text">Mon âme est plutôt...</div>
+                </div>
+                <div class="answer-checkbox-group">
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div>
+                        <span class="checkbox-label">Artiste</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div>
+                        <span class="checkbox-label">Rêveur</span>
+                    </div>
+                    <div class="checkbox-item">
+                        <div class="checkbox-box"></div>
+                        <span class="checkbox-label">Pragmatique</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 11 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">11</div>
+                    <div class="question-text">Ce que tu admires chez moi...</div>
+                </div>
+                <div class="answer-lines">
+                    <div class="answer-line"></div>
+                    <div class="answer-line"></div>
+                </div>
+            </div>
+
+            <!-- Question 12 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">12</div>
+                    <div class="question-text">Mon niveau de patience</div>
+                </div>
+                <div class="scale-container">
+                    <div class="scale-labels">
+                        <span class="scale-label">Impatient</span>
+                        <span class="scale-label">Patient</span>
+                    </div>
+                    <div class="scale-items">
+                        <div class="scale-item">1</div>
+                        <div class="scale-item">2</div>
+                        <div class="scale-item">3</div>
+                        <div class="scale-item">4</div>
+                        <div class="scale-item">5</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 13 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">13</div>
+                    <div class="question-text">En moment difficile, je préfère...</div>
+                </div>
+                <div class="answer-binary">
+                    <div class="binary-option">
+                        <div class="binary-circle"></div>
+                        <span class="binary-label">Être seul(e)</span>
+                    </div>
+                    <div class="binary-option">
+                        <div class="binary-circle"></div>
+                        <span class="binary-label">Entouré(e)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Question 14 -->
+            <div class="question-block">
+                <div class="question-header">
+                    <div class="question-number">14</div>
+                    <div class="question-text">Un conseil que tu me donnerais...</div>
+                </div>
+                <div class="answer-lines">
+                    <div class="answer-line"></div>
+                    <div class="answer-line"></div>
+                </div>
+            </div>
+
         </div>
-      </div>
 
-      <!-- Question 4 -->
-      <div class="question-block">
-        <div class="question-number">4</div>
-        <div class="question-text">{{QUESTION_4}}</div>
-        <div class="answers-grid">
-          <div class="answer-option">
-            <span class="answer-label">A</span>
-            {{REPONSE_4A}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">B</span>
-            {{REPONSE_4B}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">C</span>
-            {{REPONSE_4C}}
-          </div>
-          <div class="answer-option correct">
-            <span class="answer-label">D</span>
-            {{REPONSE_4D}}
-          </div>
+        <div class="footer">
+            <div class="score-section">
+                Compare tes réponses avec les miennes ! Score : <span class="score-line"></span> / 14
+            </div>
+            <p class="footer-message">Merci d'avoir joué 💛</p>
         </div>
-      </div>
-
-      <!-- Question 5 -->
-      <div class="question-block">
-        <div class="question-number">5</div>
-        <div class="question-text">{{QUESTION_5}}</div>
-        <div class="answers-grid">
-          <div class="answer-option">
-            <span class="answer-label">A</span>
-            {{REPONSE_5A}}
-          </div>
-          <div class="answer-option correct">
-            <span class="answer-label">B</span>
-            {{REPONSE_5B}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">C</span>
-            {{REPONSE_5C}}
-          </div>
-          <div class="answer-option">
-            <span class="answer-label">D</span>
-            {{REPONSE_5D}}
-          </div>
-        </div>
-      </div>
-
-      <!-- Score -->
-      <div class="quiz-score">
-        <div class="score-title">Interprétation des résultats</div>
-        <div class="score-text">
-          <p><strong>5/5</strong> — Tu connais {{PRENOM}} mieux que personne ! Bravo 🎉</p>
-          <p><strong>3-4/5</strong> — Très bien ! Quelques détails t'ont échappé.</p>
-          <p><strong>1-2/5</strong> — Il est temps de passer plus de temps ensemble !</p>
-          <p><strong>0/5</strong> — Euh... Tu es sûr(e) de connaître cette personne ? 😅</p>
-        </div>
-      </div>
-
-      <!-- Footer -->
-      <p class="quiz-footer">
-        Les bonnes réponses sont marquées d'une coche ✓
-      </p>
-
     </div>
-  </div>
+
+    <script>
+        // Interactivité pour les options binaires
+        document.querySelectorAll('.binary-option').forEach(option => {
+            option.addEventListener('click', function() {
+                const container = this.closest('.answer-binary');
+                container.querySelectorAll('.binary-option').forEach(opt => {
+                    opt.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+
+        // Interactivité pour les échelles
+        document.querySelectorAll('.scale-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const container = this.closest('.scale-items');
+                container.querySelectorAll('.scale-item').forEach(scale => {
+                    scale.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+
+        // Interactivité pour les checkboxes
+        document.querySelectorAll('.checkbox-item').forEach(item => {
+            item.addEventListener('click', function() {
+                const container = this.closest('.answer-checkbox-group');
+                container.querySelectorAll('.checkbox-item').forEach(box => {
+                    box.classList.remove('selected');
+                });
+                this.classList.add('selected');
+            });
+        });
+    </script>
 </body>
 </html>
 
