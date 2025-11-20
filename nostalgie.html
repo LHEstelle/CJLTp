@@ -11,123 +11,88 @@
 <div class="page">
   
   <!-- COINS -->
-  <div class="corner-deco tl"></div>
-  <div class="corner-deco tr"></div>
-  <div class="corner-deco bl"></div>
-  <div class="corner-deco br"></div>
+  <div class="corner tl"></div>
+  <div class="corner tr"></div>
+  <div class="corner bl"></div>
+  <div class="corner br"></div>
   
   <!-- HEADER -->
   <div class="header">
-    <h1 class="header-title">Nostalgie</h1>
+    <h1 class="header-title">NOSTALGIE</h1>
     <p class="header-subtitle">Les souvenirs d'une époque révolue</p>
   </div>
   
-  <!-- JOURNÉE TYPE - GRANDE ZONE -->
-  <div class="journee-section">
+  <!-- JOURNÉE TYPE - HORIZONTAL -->
+  <div class="journee-box">
     <div class="journee-header">
       <span class="journee-emoji">📼</span>
       <h2 class="journee-title">Tu te souviens ?</h2>
       <p class="journee-age">Quand tu avais {{age}} ans</p>
     </div>
     
-    <div class="journee-moments">
+    <div class="journee-content">
+      <div class="moment">
+        <div class="moment-icon">🌅</div>
+        <div class="moment-label">Le Matin</div>
+        <div class="moment-text">{{matin}}</div>
+      </div>
       
-      <div class="journee-moment">
+      <div class="moment">
         <div class="moment-icon">☀️</div>
-        <div class="moment-content">
-          <div class="moment-time">Le Matin</div>
-          <div class="moment-text">{{matin_texte}}</div>
-        </div>
+        <div class="moment-label">L'Après-midi</div>
+        <div class="moment-text">{{apresmidi}}</div>
       </div>
       
-      <div class="journee-moment">
-        <div class="moment-icon">🌤️</div>
-        <div class="moment-content">
-          <div class="moment-time">L'Après-midi</div>
-          <div class="moment-text">{{apresmidi_texte}}</div>
-        </div>
-      </div>
-      
-      <div class="journee-moment">
+      <div class="moment">
         <div class="moment-icon">🌙</div>
-        <div class="moment-content">
-          <div class="moment-time">Le Soir</div>
-          <div class="moment-text">{{soir_texte}}</div>
-        </div>
+        <div class="moment-label">Le Soir</div>
+        <div class="moment-text">{{soir}}</div>
       </div>
-      
     </div>
   </div>
   
-  <!-- GRILLE 2 COLONNES -->
-  <div class="main-grid">
+  <!-- GRILLE CONTENU -->
+  <div class="content-grid">
     
     <!-- COLONNE GAUCHE -->
     <div>
       
-      <!-- DESSINS ANIMÉS -->
+      <!-- À L'ÉCRAN -->
       <div class="section">
         <div class="section-header">
           <span class="section-icon">📺</span>
-          <h3 class="section-title">Dessins animés</h3>
+          <h3 class="section-title">À l'écran</h3>
         </div>
-        <div class="items-list">
-          <div class="item-row">
-            <span class="item-emoji-small">🐉</span>
-            <span class="item-text-small">{{dessin_anime_1}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">⚡</span>
-            <span class="item-text-small">{{dessin_anime_2}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🦸</span>
-            <span class="item-text-small">{{dessin_anime_3}}</span>
-          </div>
+        <div class="items">
+          <div class="item">{{ecran_1}}</div>
+          <div class="item">{{ecran_2}}</div>
+          <div class="item">{{ecran_3}}</div>
         </div>
       </div>
       
-      <!-- ÉMISSIONS -->
+      <!-- LE GOÛTER -->
       <div class="section">
         <div class="section-header">
-          <span class="section-icon">🎪</span>
-          <h3 class="section-title">Émissions TV</h3>
+          <span class="section-icon">🍭</span>
+          <h3 class="section-title">Le goûter</h3>
         </div>
-        <div class="items-list">
-          <div class="item-row">
-            <span class="item-emoji-small">🎤</span>
-            <span class="item-text-small">{{emission_1}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🎭</span>
-            <span class="item-text-small">{{emission_2}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🎬</span>
-            <span class="item-text-small">{{emission_3}}</span>
-          </div>
+        <div class="items">
+          <div class="item">{{gouter_1}}</div>
+          <div class="item">{{gouter_2}}</div>
+          <div class="item">{{gouter_3}}</div>
         </div>
       </div>
       
-      <!-- BONBONS -->
+      <!-- ON JOUAIT À -->
       <div class="section">
         <div class="section-header">
-          <span class="section-icon">🍬</span>
-          <h3 class="section-title">Bonbons & Goûters</h3>
+          <span class="section-icon">🎮</span>
+          <h3 class="section-title">On jouait à</h3>
         </div>
-        <div class="items-list">
-          <div class="item-row">
-            <span class="item-emoji-small">🍫</span>
-            <span class="item-text-small">{{bonbon_1}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🍭</span>
-            <span class="item-text-small">{{bonbon_2}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🧃</span>
-            <span class="item-text-small">{{boisson}}</span>
-          </div>
+        <div class="items">
+          <div class="item">{{jeu_1}}</div>
+          <div class="item">{{jeu_2}}</div>
+          <div class="item">{{jeu_3}}</div>
         </div>
       </div>
       
@@ -136,57 +101,39 @@
     <!-- COLONNE DROITE -->
     <div>
       
-      <!-- MUSIQUE -->
+      <!-- DANS LES OREILLES -->
       <div class="section">
         <div class="section-header">
           <span class="section-icon">🎵</span>
-          <h3 class="section-title">Artistes du moment</h3>
+          <h3 class="section-title">Dans les oreilles</h3>
         </div>
-        <div class="items-list">
-          <div class="item-row">
-            <span class="item-emoji-small">🎤</span>
-            <span class="item-text-small">{{artiste_1}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🎸</span>
-            <span class="item-text-small">{{artiste_2}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🎹</span>
-            <span class="item-text-small">{{artiste_3}}</span>
-          </div>
+        <div class="items">
+          <div class="item">{{musique_1}}</div>
+          <div class="item">{{musique_2}}</div>
+          <div class="item">{{musique_3}}</div>
         </div>
       </div>
       
-      <!-- JEUX -->
+      <!-- ON LISAIT -->
       <div class="section">
         <div class="section-header">
-          <span class="section-icon">🎮</span>
-          <h3 class="section-title">Jeux & Jouets</h3>
+          <span class="section-icon">📚</span>
+          <h3 class="section-title">On lisait</h3>
         </div>
-        <div class="items-list">
-          <div class="item-row">
-            <span class="item-emoji-small">🧸</span>
-            <span class="item-text-small">{{jouet_1}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🎲</span>
-            <span class="item-text-small">{{jeu_societe}}</span>
-          </div>
-          <div class="item-row">
-            <span class="item-emoji-small">🎯</span>
-            <span class="item-text-small">{{jeu_exterieur}}</span>
-          </div>
+        <div class="items">
+          <div class="item">{{lecture_1}}</div>
+          <div class="item">{{lecture_2}}</div>
+          <div class="item">{{lecture_3}}</div>
         </div>
       </div>
       
-      <!-- EXPRESSIONS -->
+      <!-- ON DISAIT -->
       <div class="section">
         <div class="section-header">
           <span class="section-icon">💬</span>
           <h3 class="section-title">On disait</h3>
         </div>
-        <div class="tags-wrapper">
+        <div class="tags">
           <span class="tag">{{expression_1}}</span>
           <span class="tag">{{expression_2}}</span>
           <span class="tag">{{expression_3}}</span>
@@ -198,43 +145,17 @@
     
   </div>
   
-  <!-- POST-IT BAS -->
-  <div class="bottom-section">
-    
-    <div class="postit">
-      <div class="postit-title">📖 Lectures</div>
-      <div class="postit-item">
-        <span class="postit-icon">📚</span>
-        <span>{{magazine_1}}</span>
-      </div>
-      <div class="postit-item">
-        <span class="postit-icon">📰</span>
-        <span>{{magazine_2}}</span>
-      </div>
-      <div class="postit-item">
-        <span class="postit-icon">📕</span>
-        <span>{{livre_serie}}</span>
-      </div>
+  <!-- OBJETS CULTES - AVEC SCOTCH -->
+  <div class="postit-section">
+    <h3 class="postit-title">🏆 Objets cultes de l'époque</h3>
+    <div class="postit-grid">
+      <div class="postit-item">{{objet_1}}</div>
+      <div class="postit-item">{{objet_2}}</div>
+      <div class="postit-item">{{objet_3}}</div>
     </div>
-    
-    <div class="postit">
-      <div class="postit-title">🏪 Souvenirs</div>
-      <div class="postit-item">
-        <span class="postit-icon">🛍️</span>
-        <span>{{marque_disparue}}</span>
-      </div>
-      <div class="postit-item">
-        <span class="postit-icon">🏬</span>
-        <span>{{lieu_mythique}}</span>
-      </div>
-      <div class="postit-item">
-        <span class="postit-icon">📼</span>
-        <span>{{objet_vintage}}</span>
-      </div>
-    </div>
-    
   </div>
 
 </div>
+
 </body>
 </html>
