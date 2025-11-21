@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ton Profil d'Époque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style-ce-jour-la-FINAL.css">
+</head>
+<body>
+ <div class="page">
+        
+        <!-- En-tête -->
+        <div class="header">
+            <h1 class="main-title">Ton Époque</h1>
+            <p class="subtitle">Événements qui ont marqué ton temps</p>
+        </div>
+
+        <!-- Timeline en zigzag -->
+        <div class="timeline-section">
+            <h2 class="section-title">Pendant ce temps, l'humanité...</h2>
+            
+            <div class="timeline-container">
+                
+                <!-- Item gauche -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">{{event_1_year}}</div>
+                        <div class="timeline-event">
+                            <span class="timeline-emoji">{{event_1_emoji}}</span>
+                            {{event_1_name}}
+                        </div>
+                        <div class="timeline-desc">{{event_1_desc}}</div>
+                    </div>
+                </div>
+
+                <!-- Item droite -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">{{event_2_year}}</div>
+                        <div class="timeline-event">
+                            <span class="timeline-emoji">{{event_2_emoji}}</span>
+                            {{event_2_name}}
+                        </div>
+                        <div class="timeline-desc">{{event_2_desc}}</div>
+                    </div>
+                </div>
+
+                <!-- Item gauche -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">{{event_3_year}}</div>
+                        <div class="timeline-event">
+                            <span class="timeline-emoji">{{event_3_emoji}}</span>
+                            {{event_3_name}}
+                        </div>
+                        <div class="timeline-desc">{{event_3_desc}}</div>
+                    </div>
+                </div>
+
+                <!-- Item droite -->
+                <div class="timeline-item right">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">{{event_4_year}}</div>
+                        <div class="timeline-event">
+                            <span class="timeline-emoji">{{event_4_emoji}}</span>
+                            {{event_4_name}}
+                        </div>
+                        <div class="timeline-desc">{{event_4_desc}}</div>
+                    </div>
+                </div>
+
+                <!-- Item gauche -->
+                <div class="timeline-item left">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-year">{{event_5_year}}</div>
+                        <div class="timeline-event">
+                            <span class="timeline-emoji">{{event_5_emoji}}</span>
+                            {{event_5_name}}
+                        </div>
+                        <div class="timeline-desc">{{event_5_desc}}</div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Culture & Divertissement -->
+        <div class="content-section">
+            <h2 class="section-title">Culture & Divertissement</h2>
+            
+            <div class="cards-grid">
+                
+                <div class="content-card">
+                    <span class="card-icon">{{culture_1_icon}}</span>
+                    <div class="card-title">{{culture_1_name}}</div>
+                    <div class="card-desc">{{culture_1_desc}}</div>
+                </div>
+
+                <div class="content-card">
+                    <span class="card-icon">{{culture_2_icon}}</span>
+                    <div class="card-title">{{culture_2_name}}</div>
+                    <div class="card-desc">{{culture_2_desc}}</div>
+                </div>
+
+                <div class="content-card">
+                    <span class="card-icon">{{culture_3_icon}}</span>
+                    <div class="card-title">{{culture_3_name}}</div>
+                    <div class="card-desc">{{culture_3_desc}}</div>
+                </div>
+
+                <div class="content-card">
+                    <span class="card-icon">{{culture_4_icon}}</span>
+                    <div class="card-title">{{culture_4_name}}</div>
+                    <div class="card-desc">{{culture_4_desc}}</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Exploits sportifs -->
+        <div class="content-section">
+            <h2 class="section-title">Exploits sportifs mémorables</h2>
+            
+            <div class="cards-grid">
+                
+                <div class="content-card">
+                    <span class="card-icon">{{sport_1_emoji}}</span>
+                    <div class="card-title">{{sport_1_name}}</div>
+                    <div class="card-desc">{{sport_1_desc}}</div>
+                </div>
+
+                <div class="content-card">
+                    <span class="card-icon">{{sport_2_emoji}}</span>
+                    <div class="card-title">{{sport_2_name}}</div>
+                    <div class="card-desc">{{sport_2_desc}}</div>
+                </div>
+
+                <div class="content-card">
+                    <span class="card-icon">{{sport_3_emoji}}</span>
+                    <div class="card-title">{{sport_3_name}}</div>
+                    <div class="card-desc">{{sport_3_desc}}</div>
+                </div>
+
+                <div class="content-card">
+                    <span class="card-icon">{{sport_4_emoji}}</span>
+                    <div class="card-title">{{sport_4_name}}</div>
+                    <div class="card-desc">{{sport_4_desc}}</div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p class="footer-text">
+                {{age}} années intenses, riches en découvertes et transformations. Le monde a changé, et toi avec lui.
+            </p>
+        </div>
+
+    </div>
+
+</body>
+</html>
