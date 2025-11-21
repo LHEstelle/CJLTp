@@ -3283,6 +3283,277 @@ Stats vie
             }
         }
 
+
+
+/* ============================================
+timeline
+   ============================================ */
+
+  * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Cormorant Garamond', 'Georgia', serif;
+            background: #0b1a2b;
+            color: #f4e5c3;
+        }
+
+        .page {
+            width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #0b1a2b 0%, #1a2f47 100%);
+            position: relative;
+            padding: 25px 40px 20px;
+        }
+
+        /* En-tête compact */
+        .header {
+            text-align: center;
+            margin-bottom: 18px;
+        }
+
+        .main-title {
+            font-size: 28px;
+            font-weight: 400;
+            color: #f4e5c3;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .subtitle {
+            font-size: 11px;
+            color: #c9a961;
+            font-style: italic;
+            letter-spacing: 1.5px;
+        }
+
+        /* Timeline section compacte */
+        .timeline-section {
+            margin-bottom: 22px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 15px;
+            color: #c9a961;
+            font-style: italic;
+            margin-bottom: 18px;
+            letter-spacing: 1.5px;
+        }
+
+        .timeline-container {
+            position: relative;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        /* Ligne centrale */
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: linear-gradient(180deg, 
+                #c9a961 0%, 
+                rgba(201, 169, 97, 0.3) 100%);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        /* Items à gauche */
+        .timeline-item.left {
+            justify-content: flex-start;
+        }
+
+        .timeline-item.left .timeline-content {
+            margin-right: auto;
+            margin-left: 0;
+            text-align: right;
+        }
+
+        /* Items à droite */
+        .timeline-item.right {
+            justify-content: flex-end;
+        }
+
+        .timeline-item.right .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            text-align: left;
+        }
+
+        .timeline-content {
+            width: 44%;
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid #c9a961;
+            border-radius: 6px;
+            padding: 10px 14px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .timeline-item.right .timeline-content {
+            border-left: none;
+            border-right: 3px solid #c9a961;
+        }
+
+        .timeline-content:hover {
+            background: rgba(201, 169, 97, 0.08);
+            transform: scale(1.03);
+            box-shadow: 0 5px 20px rgba(201, 169, 97, 0.2);
+        }
+
+        /* Point central */
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 14px;
+            height: 14px;
+            background: #c9a961;
+            border: 3px solid #1a2f47;
+            border-radius: 50%;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .timeline-item:hover .timeline-dot {
+            transform: translate(-50%, -50%) scale(1.5);
+            box-shadow: 0 0 0 8px rgba(201, 169, 97, 0.2);
+        }
+
+        .timeline-year {
+            display: inline-block;
+            font-size: 11px;
+            color: #d4af37;
+            font-weight: 700;
+            margin-bottom: 4px;
+            padding: 1px 5px;
+            background: rgba(201, 169, 97, 0.15);
+            border-radius: 3px;
+        }
+
+        .timeline-emoji {
+            font-size: 14px;
+            margin-right: 6px;
+        }
+
+        .timeline-event {
+            font-size: 12px;
+            color: #f4e5c3;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .timeline-desc {
+            font-size: 10px;
+            color: #b8a379;
+            line-height: 1.3;
+        }
+
+        /* Sections Culture & Sport très compactes */
+        .content-section {
+            margin-bottom: 20px;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .content-card {
+            background: rgba(255, 255, 255, 0.03);
+            border-left: 3px solid #c9a961;
+            border-radius: 6px;
+            padding: 10px 12px;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .content-card:hover {
+            transform: translateX(5px);
+            background: rgba(201, 169, 97, 0.08);
+            box-shadow: 0 5px 15px rgba(201, 169, 97, 0.15);
+        }
+
+        .card-icon {
+            font-size: 20px;
+            margin-bottom: 6px;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .content-card:hover .card-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+
+        .card-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: #f4e5c3;
+            margin-bottom: 4px;
+        }
+
+        .card-desc {
+            font-size: 9px;
+            color: #b8a379;
+            line-height: 1.3;
+        }
+
+        /* Footer compact */
+        .footer {
+            position: absolute;
+            bottom: 15px;
+            left: 40px;
+            right: 40px;
+            text-align: center;
+            padding: 8px;
+            border-top: 1px solid rgba(201, 169, 97, 0.2);
+        }
+
+        .footer-text {
+            font-size: 9px;
+            color: #9b8556;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        @media print {
+            body {
+                background: #0b1a2b;
+            }
+            
+            .page {
+                margin: 0;
+            }
+
+            @page {
+                margin: 0;
+            }
+        }
+
+
+
+
 /* ============================================
 conclusion émotionnelle
    ============================================ */
